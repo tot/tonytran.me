@@ -44,6 +44,15 @@ const RECENT_ARTICLES = [
    },
 ]
 
+const PROJECTS = [
+   {
+      year: "2023",
+      title: "Harmonyze",
+      description: "A social platform to showcase your music personality.",
+      url: "https://github.com/tot/harmonyze",
+   },
+]
+
 export default function Home() {
    const [index, setIndex] = useState(0)
 
@@ -122,7 +131,7 @@ export default function Home() {
             </div>
          </div>
          <div className="px-6 py-8 lg:px-8 lg:py-16">
-            <h1 className="text-3xl font-bold">Writings</h1>
+            <h1 className="text-3xl font-bold text-white">Writings</h1>
             <div className="mt-6 divide-y-2 divide-neutral-800/75 border border-neutral-800/75 text-neutral-200">
                {RECENT_ARTICLES.map(({ title, slug, date }) => (
                   <div key={slug}>
@@ -149,11 +158,11 @@ export default function Home() {
             </div>
          </div>
          <div className="px-6 py-8 lg:px-8 lg:py-16">
-            <h1 className="text-3xl font-bold">Projects</h1>
+            <h1 className="text-3xl font-bold text-white">Projects</h1>
             <div className="mt-6 grid grid-cols-2">
-               <div className="flex h-48 flex-col justify-between rounded-lg border-neutral-800/75 bg-neutral-800/20 p-6">
+               <div className="flex h-48 flex-col justify-between rounded-lg border border-neutral-800/75 p-6 hover:bg-neutral-800/25">
                   <div className="w-1/2">
-                     <time className="font-mono text-base text-blue-500">
+                     <time className="font-mono text-base text-sky-500">
                         2023
                      </time>
                      <p className="text-lg font-semibold leading-5 text-neutral-100">
@@ -165,7 +174,7 @@ export default function Home() {
                   </div>
                   <a href="" className="">
                      <button
-                        className="flex h-8 items-center justify-center rounded-md border border-neutral-700 bg-neutral-800/25 px-2 text-sm hover:bg-neutral-100 hover:text-black"
+                        className="flex h-10 items-center justify-center rounded bg-white px-3 text-sm font-medium text-black hover:bg-white/75"
                         type="button"
                      >
                         View repo
