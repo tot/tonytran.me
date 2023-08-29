@@ -6,6 +6,10 @@ import TextTransition, { presets } from "react-text-transition"
 
 const LINKS = [
    {
+      name: "Home",
+      slug: "/",
+   },
+   {
       name: "Blog",
       slug: "/blog",
    },
@@ -64,18 +68,28 @@ export default function Home() {
    }, [])
 
    return (
-      <main className="mx-auto flex min-h-screen max-w-6xl flex-col">
+      <main className="mx-auto flex min-h-screen max-w-5xl flex-col">
          <nav className="flex w-full items-center justify-between border-b border-neutral-700/75 p-6 lg:p-8">
             <h3 className="text-xl font-bold text-white">tt.</h3>
-            <div className="flex items-center space-x-4 text-base lg:space-x-8">
+            <ul className="flex items-center space-x-4 text-base lg:space-x-8">
                {LINKS.map(({ name, slug }) => (
                   <Link key={name} href={slug}>
-                     <p className="font-medium text-neutral-400">{name}</p>
+                     <li className="font-medium text-neutral-400">{name}</li>
                   </Link>
                ))}
-            </div>
+            </ul>
          </nav>
-         <div className="gap-6 px-6 py-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24">
+         {/* <div className="sticky top-10 z-50 mx-auto flex w-fit items-center justify-between rounded-full border border-neutral-700/75 bg-neutral-800/50 px-6 py-2 filter backdrop-blur-md">
+            
+            <ul className="flex items-center space-x-8 font-mono">
+               {LINKS.map(({ name, slug }) => (
+                  <Link key={name} href={slug}>
+                     <li className="font-medium text-neutral-400">{name}</li>
+                  </Link>
+               ))}
+            </ul>
+         </div> */}
+         <section className="gap-6 px-6 py-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24">
             <div className="">
                <div className="text-3xl font-bold tracking-wide text-white lg:text-5xl">
                   <h1 className="">Hello, world! 👋</h1>
@@ -85,7 +99,7 @@ export default function Home() {
                   <div className="">
                      I&apos;m{" "}
                      <TextTransition
-                        className="text-sky-400"
+                        className="z-20 text-sky-400"
                         inline
                         springConfig={presets.gentle}
                      >
@@ -129,10 +143,10 @@ export default function Home() {
                   spotify
                </div>
             </div>
-         </div>
-         <div className="px-6 py-8 lg:px-8 lg:py-16">
+         </section>
+         <section className="px-6 py-8 lg:px-8 lg:py-16">
             <h1 className="text-3xl font-bold text-white">Writings</h1>
-            <div className="mt-6 divide-y-2 divide-neutral-800/75 border border-neutral-800/75 text-neutral-200">
+            <div className="mt-6 divide-y-2 divide-neutral-800/75 text-neutral-200">
                {RECENT_ARTICLES.map(({ title, slug, date }) => (
                   <div key={slug}>
                      <Link href="">
@@ -156,8 +170,8 @@ export default function Home() {
                   </Link>
                </div> */}
             </div>
-         </div>
-         <div className="px-6 py-8 lg:px-8 lg:py-16">
+         </section>
+         <section className="px-6 py-8 lg:px-8 lg:py-16">
             <h1 className="text-3xl font-bold text-white">Projects</h1>
             <div className="mt-6 grid grid-cols-2">
                <div className="flex h-48 flex-col justify-between rounded-lg border border-neutral-800/75 p-6 hover:bg-neutral-800/25">
@@ -182,10 +196,10 @@ export default function Home() {
                   </a>
                </div>
             </div>
-         </div>
-         <div className="px-8 py-24">
+         </section>
+         <section className="px-8 py-24">
             <h1 className="">Technologies</h1>
-         </div>
+         </section>
       </main>
    )
 }
