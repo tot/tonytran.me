@@ -13,7 +13,7 @@ const Intro = () => {
       return () => clearTimeout(intervalId)
    }, [])
    return (
-      <section className="gap-6 px-6 py-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-24">
+      <section className="gap-6 px-6 py-16 lg:grid lg:grid-cols-1 lg:gap-12 lg:px-8 lg:py-32">
          <div className="">
             <div className="text-3xl font-bold tracking-wide text-white lg:text-5xl">
                <h1 className="">Hello, world! 👋</h1>
@@ -56,7 +56,7 @@ const Intro = () => {
                </p>
             </div>
          </div>
-         <div className="mx-auto mt-12 grid h-[20rem] w-full max-w-full grid-cols-2 grid-rows-2 gap-6 md:max-w-xl lg:mt-0 lg:h-[32rem] lg:max-w-full lg:gap-8">
+         {/* <div className="mx-auto mt-12 grid h-[20rem] w-full max-w-full grid-cols-2 grid-rows-2 gap-6 md:max-w-xl lg:mt-0 lg:h-[32rem] lg:max-w-full lg:gap-8">
             <div className="rounded-lg border-neutral-800/75 bg-neutral-800/30">
                location
             </div>
@@ -66,7 +66,7 @@ const Intro = () => {
             <div className="rounded-lg border-neutral-800/75 bg-neutral-800/30">
                spotify
             </div>
-         </div>
+         </div> */}
       </section>
    )
 }
