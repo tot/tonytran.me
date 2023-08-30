@@ -46,11 +46,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
                <time className={cn("font-mono text-sm", dateColor)}>
                   {year}
                </time>
-               <p className="mt-2 text-base font-semibold leading-8 text-neutral-100">
-                  Some project title
+               <p className="mt-2 text-base font-bold leading-8 text-neutral-100">
+                  {title}
                </p>
                <p className="text-sm leading-6 text-neutral-400">
-                  A bunch of project descriptions everywhere aaahahah
+                  {description}
                </p>
             </div>
          </div>
