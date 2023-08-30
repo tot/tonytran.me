@@ -8,7 +8,7 @@ const PROJECTS = [
       description: "A social space to showcase your music personality.",
       url: "https://github.com/tot/harmonyze",
       dateColor: "text-sky-500",
-      bgColor: "to-sky-500/10",
+      bgColor: "to-sky-500/[0.12]",
       border: "border-sky-500/20",
    },
    {
@@ -18,7 +18,7 @@ const PROJECTS = [
          "A digital portal for students of the entrepreneurship club at UVA.",
       url: "https://github.com/veovirginia/veo-website",
       dateColor: "text-[#FF6969]",
-      bgColor: "to-[#FF6969]/10",
+      bgColor: "to-[#FF6969]/[0.12]",
       border: "border-[#FF6969]/20",
    },
    {
@@ -28,7 +28,7 @@ const PROJECTS = [
          "A platform for businesses to manage cryptocurrency finances.",
       url: "https://github.com/Flux-Crypto/Flux/tree/dev",
       dateColor: "text-purple-500",
-      bgColor: "to-purple-500/10",
+      bgColor: "to-purple-500/[0.12]",
       border: "border-purple-500/20",
    },
    {
@@ -37,7 +37,7 @@ const PROJECTS = [
       description: "A backend server for FRC robot communications.",
       url: "https://github.com/tot/cavcomms",
       dateColor: "text-[#FFEECC]",
-      bgColor: "to-[#FFEECC]/10",
+      bgColor: "to-[#FFEECC]/[0.12]",
       border: "border-[#FFEECC]/20",
    },
    {
@@ -46,7 +46,7 @@ const PROJECTS = [
       description: "A dashboard client to manage FRC robots.",
       url: "https://github.com/tot/cavcomms-dashboard",
       dateColor: "text-lime-500",
-      bgColor: "to-lime-500/10",
+      bgColor: "to-lime-500/[0.12]",
       border: "border-lime-500/20",
    },
 ]
