@@ -11,6 +11,9 @@ import {
    BiLogoReact,
 } from "react-icons/bi"
 import Section from "./Section"
+import { motion } from "framer-motion"
+import Technology from "./Technology"
+import { useState } from "react"
 
 const TECH = [
    {
@@ -56,17 +59,22 @@ const TECH = [
 ]
 
 const Technologies = () => {
+   const [activeItem, setActiveItem] = useState<string>("")
    return (
       <Section>
          <h1 className="text-3xl font-bold text-white">Technologies</h1>
-         <div className="mx-auto mt-6 grid max-w-3xl grid-cols-4 gap-2">
+         <div
+            onMouseLeave={() => setActiveItem("")}
+            onTouchEnd={() => setActiveItem("")}
+            className="mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4"
+         >
             {TECH.map((item) => (
-               <div
+               <Technology
                   key={item.name}
-                  className="flex items-center justify-center p-4 text-3xl text-neutral-400 transition-colors duration-150 hover:text-neutral-200"
-               >
-                  {item.icon}
-               </div>
+                  activeItem={activeItem}
+                  setActiveItem={(item: string) => setActiveItem(item)}
+                  {...item}
+               />
             ))}
          </div>
       </Section>
