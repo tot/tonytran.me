@@ -59,7 +59,7 @@ const Technologies = () => {
    return (
       <Section>
          <h1 className="text-3xl font-bold text-white">Technologies</h1>
-         <div className="mx-auto mt-6 grid max-w-4xl grid-cols-4 gap-2">
+         <div className="mx-auto mt-6 grid max-w-3xl grid-cols-4 gap-2">
             {TECH.map((item) => (
                <div
                   key={item.name}
