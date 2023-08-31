@@ -5,6 +5,18 @@ import { NavLink } from "@utils/types"
 import { useLockBodyScroll } from "@uidotdev/usehooks"
 import { cn } from "@utils/utils"
 import { Pivot as Hamburger } from "hamburger-react"
+import { BiLogoLinkedin, BiLogoGithub } from "react-icons/bi"
+
+const SOCIALS = [
+   {
+      icon: <BiLogoLinkedin className="" />,
+      url: "https://www.linkedin.com/in/tony-tran03/",
+   },
+   {
+      icon: <BiLogoGithub className="" />,
+      url: "https://github.com/tot",
+   },
+]
 
 const itemVariants = {
    closed: {
@@ -61,7 +73,7 @@ const NavbarBody = ({ links }: MobileNavbarProps) => {
                      key={name}
                      variants={itemVariants}
                      className={cn(
-                        "font-general-sans block p-4 text-3xl font-bold",
+                        "block p-4 font-general-sans text-3xl font-bold",
                         {
                            "rounded-lg bg-gradient-to-r from-[#62fde8]/10 text-[#62fde8]":
                               currentRoute === slug,
@@ -74,7 +86,16 @@ const NavbarBody = ({ links }: MobileNavbarProps) => {
                ))}
             </motion.div>
 
-            <div className="mt-auto p-6">Socials</div>
+            <ul className="mt-auto flex items-center space-x-4 p-6 text-3xl text-neutral-500">
+               {SOCIALS.map(({ icon, url }) => (
+                  <li
+                     key={url}
+                     className="transition-colors duration-150 hover:text-neutral-200"
+                  >
+                     <Link href={url}>{icon}</Link>
+                  </li>
+               ))}
+            </ul>
          </div>
       </motion.aside>
    )
