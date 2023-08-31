@@ -13,17 +13,17 @@ const Intro = () => {
       return () => clearTimeout(intervalId)
    }, [])
    return (
-      <section className="gap-6 px-6 py-16 lg:grid lg:grid-cols-1 lg:gap-12 lg:px-8 lg:py-32">
+      <section className="gap-6 px-6 py-8 pt-12 md:py-16 lg:grid lg:grid-cols-1 lg:gap-12 lg:px-8 lg:py-32">
          <div className="">
-            <div className="text-3xl font-bold tracking-wide text-white lg:text-5xl">
+            <div className="font-general-sans text-4xl font-bold tracking-wide text-white lg:text-5xl">
                <h1 className="">Hello, world! 👋</h1>
-               <h1 className="mt-4">I&apos;m Tony Tran</h1>
+               <h1 className="mt-2 md:mt-4">I&apos;m Tony Tran</h1>
             </div>
-            <div className="mt-8 space-y-4 text-base leading-8 text-neutral-400">
+            <div className="mt-6 space-y-4 font-sans text-base leading-8 text-neutral-400 md:mt-8">
                <div className="">
                   I&apos;m{" "}
                   <TextTransition
-                     className="z-20 text-sky-400"
+                     className="z-20 text-[#62fdca]"
                      inline
                      springConfig={presets.gentle}
                   >
@@ -33,9 +33,12 @@ const Intro = () => {
                </div>
 
                <p className="">
-                  I love working on projects in the startup, cybersecurity,
-                  finance, and software automation spaces. Right now, I&apos;m
-                  building{" "}
+                  I love working on projects in the{" "}
+                  <span className="text-[#62fde8]">startup</span>,{" "}
+                  <span className="text-[#62fde8]">cybersecurity</span>,{" "}
+                  <span className="text-[#62fde8]">finance</span>, and{" "}
+                  <span className="text-[#62fde8]">software automation</span>{" "}
+                  spaces. Right now, I&apos;m building{" "}
                   <a
                      href="https://github.com/tot/musicmates"
                      className="text-neutral-100 underline"
@@ -56,17 +59,6 @@ const Intro = () => {
                </p>
             </div>
          </div>
-         {/* <div className="mx-auto mt-12 grid h-[20rem] w-full max-w-full grid-cols-2 grid-rows-2 gap-6 md:max-w-xl lg:mt-0 lg:h-[32rem] lg:max-w-full lg:gap-8">
-            <div className="rounded-lg border-neutral-800/75 bg-neutral-800/30">
-               location
-            </div>
-            <div className="row-span-2 rounded-lg border-neutral-800/75 bg-neutral-800/30">
-               portrait
-            </div>
-            <div className="rounded-lg border-neutral-800/75 bg-neutral-800/30">
-               spotify
-            </div>
-         </div> */}
       </section>
    )
 }
