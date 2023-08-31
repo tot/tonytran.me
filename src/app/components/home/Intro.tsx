@@ -16,7 +16,9 @@ const Intro = () => {
       <section className="gap-6 px-6 py-8 pt-12 md:py-16 lg:grid lg:grid-cols-1 lg:gap-12 lg:px-8 lg:py-32">
          <div className="">
             <div className="font-general-sans text-4xl font-bold tracking-wide text-white lg:text-5xl">
-               <h1 className="">Hello, world! 👋</h1>
+               <h1 className="">
+                  Hello, world! <span className="waving-hand">👋</span>
+               </h1>
                <h1 className="mt-2 md:mt-4">I&apos;m Tony Tran</h1>
             </div>
             <div className="mt-6 space-y-4 font-sans text-base leading-8 text-neutral-400 md:mt-8">
