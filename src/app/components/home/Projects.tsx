@@ -1,3 +1,4 @@
+import Heading from "./Heading"
 import ProjectCard from "./ProjectCard"
 import Section from "./Section"
 
@@ -54,7 +55,7 @@ const PROJECTS = [
 const Projects = () => {
    return (
       <Section>
-         <h1 className="text-3xl font-bold text-white">Projects</h1>
+         <Heading>Projects</Heading>
          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
             {PROJECTS.map((project) => (
                <ProjectCard key={project.title} {...project} />

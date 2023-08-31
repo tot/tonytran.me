@@ -16,6 +16,10 @@ const config: Config = {
          opacity: {
             "15": "0.15",
          },
+         fontFamily: {
+            "general-sans": ["var(--font-general-sans)"],
+            sans: ["var(--font-inter)"],
+         },
       },
    },
    plugins: [],

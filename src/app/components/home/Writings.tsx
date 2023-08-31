@@ -4,6 +4,7 @@ import { BiRightArrowAlt } from "react-icons/bi"
 import RecentArticle from "./RecentArticle"
 import Section from "./Section"
 import { useState } from "react"
+import Heading from "./Heading"
 
 const RECENT_ARTICLES = [
    {
@@ -42,7 +43,7 @@ const AllPostsButton = () => {
       <div className="">
          <Link href="">
             <button
-               className="flex h-10 items-center justify-center rounded border border-neutral-800 px-3 text-base text-neutral-300 shadow transition-colors duration-150 hover:bg-neutral-700/25"
+               className="flex h-10 items-center justify-center rounded border border-neutral-800 px-3 font-sans text-base text-neutral-300 shadow transition-colors duration-150 hover:bg-neutral-700/25"
                type="button"
                onMouseEnter={() => setHover(true)}
                onMouseLeave={() => setHover(false)}
@@ -61,7 +62,7 @@ const Writings = () => {
    return (
       <Section>
          <span className="items-baseline justify-between md:flex">
-            <h1 className="text-3xl font-bold text-white">Recent Articles</h1>
+            <Heading>Recent Articles</Heading>
             <div className="hidden md:block">
                <AllPostsButton />
             </div>

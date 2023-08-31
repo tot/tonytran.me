@@ -17,7 +17,7 @@ const Footer = () => {
       <>
          <div className="mt-8 h-px w-full bg-neutral-800" />
          <footer className="flex items-baseline justify-between p-6">
-            <h3 className="text-sm font-semibold text-neutral-500">
+            <h3 className="font-sans text-sm font-semibold text-neutral-500">
                Tony Tran
             </h3>
             <ul className="flex items-center space-x-4 text-xl text-neutral-500">

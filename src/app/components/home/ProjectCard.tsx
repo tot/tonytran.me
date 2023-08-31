@@ -1,6 +1,6 @@
-import { cn } from "@/utils/utils"
+import { cn } from "@utils/utils"
 import { motion } from "framer-motion"
-import { FC, useState } from "react"
+import { useState } from "react"
 import { BiUpArrowAlt } from "react-icons/bi"
 
 interface ProjectCardProps {
@@ -10,18 +10,16 @@ interface ProjectCardProps {
    url: string
    dateColor: string
    bgColor: string
-   border: string
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({
+const ProjectCard = ({
    year,
    title,
    description,
    url,
    dateColor,
    bgColor,
-   border,
-}) => {
+}: ProjectCardProps) => {
    const [isHover, setHover] = useState(false)
    return (
       <a href={url} target="_blank">
@@ -46,10 +44,10 @@ const ProjectCard: FC<ProjectCardProps> = ({
                <time className={cn("font-mono text-sm", dateColor)}>
                   {year}
                </time>
-               <p className="mt-2 text-base font-bold leading-8 text-neutral-100">
+               <p className="font-general-sans mt-2 text-base font-bold leading-8 tracking-wide text-neutral-100">
                   {title}
                </p>
-               <p className="text-sm leading-6 text-neutral-400">
+               <p className="font-sans text-sm leading-6 text-neutral-400">
                   {description}
                </p>
             </div>

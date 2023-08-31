@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { FC, ReactNode } from "react"
+import { ReactNode } from "react"
 
 interface TechnologyProps {
    name: string
@@ -8,18 +8,20 @@ interface TechnologyProps {
    setActiveItem: (item: string) => void
 }
 
-const Technology: FC<TechnologyProps> = ({
+const Technology = ({
    name,
    icon,
    activeItem,
    setActiveItem,
-}) => {
+}: TechnologyProps) => {
    return (
       <motion.div
          onMouseEnter={() => setActiveItem(name)}
-         className="flex select-none flex-col items-center justify-center p-4 text-neutral-400 hover:text-neutral-200 "
+         onTouchStart={() => setActiveItem(name)}
+         onTouchEnd={() => setActiveItem("")}
+         className="flex select-none flex-col items-center justify-center p-4 text-neutral-400 hover:text-neutral-200"
       >
-         <div className="relative flex items-center justify-center text-3xl transition-colors duration-300">
+         <div className="relative flex items-center justify-center text-3xl transition-colors duration-200">
             {icon}
             <AnimatePresence>
                {activeItem === name && (
@@ -35,7 +37,9 @@ const Technology: FC<TechnologyProps> = ({
                )}
             </AnimatePresence>
          </div>
-         <p className="mt-2 text-sm">{name}</p>
+         <p className="mt-2 font-sans text-sm transition-colors duration-200">
+            {name}
+         </p>
       </motion.div>
    )
 }
