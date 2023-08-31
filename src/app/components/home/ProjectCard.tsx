@@ -22,10 +22,15 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
    const [isHover, setHover] = useState(false)
    return (
-      <a href={url} target="_blank">
+      <motion.a
+         href={url}
+         target="_blank"
+         whileTap={{ scale: 0.95 }}
+         whileHover={{ scale: 1.05 }}
+      >
          <div
             className={cn(
-               "relative flex h-full flex-col justify-between rounded-lg border border-neutral-700/50 bg-gradient-to-br from-transparent p-4 shadow transition-colors duration-150 hover:bg-neutral-800/25",
+               "relative flex h-full flex-col justify-between rounded-lg border border-neutral-700/50 bg-[#0c0b0b] bg-gradient-to-br from-transparent p-4 shadow shadow-[inset_0px_0.0625rem_0_rgba(255,255,255,0.05),0_0.25rem_0.5rem_0_rgba(0,0,0,0.1)] transition-colors duration-150 hover:bg-[#19181a]",
                bgColor
             )}
             onMouseEnter={() => setHover(true)}
@@ -44,7 +49,7 @@ const ProjectCard = ({
                <time className={cn("font-mono text-sm", dateColor)}>
                   {year}
                </time>
-               <p className="font-general-sans mt-2 text-base font-bold leading-8 tracking-wide text-neutral-100">
+               <p className="mt-2 font-general-sans text-base font-bold leading-8 tracking-wide text-neutral-100">
                   {title}
                </p>
                <p className="font-sans text-sm leading-6 text-neutral-400">
@@ -52,7 +57,7 @@ const ProjectCard = ({
                </p>
             </div>
          </div>
-      </a>
+      </motion.a>
    )
 }
 

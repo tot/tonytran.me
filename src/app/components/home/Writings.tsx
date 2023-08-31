@@ -42,17 +42,18 @@ const AllPostsButton = () => {
    return (
       <div className="">
          <Link href="">
-            <button
-               className="flex h-10 items-center justify-center rounded border border-neutral-800 px-3 font-sans text-base text-neutral-300 shadow transition-colors duration-150 hover:bg-neutral-700/25"
+            <motion.button
+               className="flex h-10 items-center justify-center rounded border-neutral-800 px-3 font-sans text-base text-neutral-300 shadow transition-colors duration-150 hover:bg-neutral-700/25 focus:bg-neutral-700/15"
                type="button"
                onMouseEnter={() => setHover(true)}
                onMouseLeave={() => setHover(false)}
+               whileTap={{ scale: 0.9 }}
             >
                <span className="text-sm font-medium">All posts</span>
                <motion.div animate={{ x: isHover ? 4 : 0 }}>
                   <BiRightArrowAlt className="ml-1 text-xl" />
                </motion.div>
-            </button>
+            </motion.button>
          </Link>
       </div>
    )
@@ -67,7 +68,7 @@ const Writings = () => {
                <AllPostsButton />
             </div>
          </span>
-         <div className="mt-6 divide-y divide-neutral-700/50 overflow-hidden rounded-lg border border-neutral-700/50 text-neutral-200">
+         <div className="mt-6 space-y-4 overflow-hidden border-neutral-700/50 text-neutral-200">
             {RECENT_ARTICLES.map((article) => (
                <div key={article.slug}>
                   <RecentArticle key={article.slug} {...article} />

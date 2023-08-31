@@ -78,9 +78,9 @@ const NavbarBody = ({ links }: MobileNavbarProps) => {
                      className={cn(
                         "block p-4 font-general-sans text-3xl font-bold",
                         {
-                           "rounded-lg bg-gradient-to-r from-[#62fde8]/10 text-[#62fde8]":
+                           "rounded-lg bg-neutral-800/20 bg-gradient-to-r from-neutral-700/50 to-neutral-700/25 text-neutral-100 shadow-[inset_0px_0.0625rem_0_rgba(255,255,255,0.05),0_0.25rem_0.5rem_0_rgba(0,0,0,0.1)]":
                               currentRoute === slug,
-                           "text-white": currentRoute !== slug,
+                           "text-neutral-400": currentRoute !== slug,
                         }
                      )}
                   >
@@ -114,7 +114,7 @@ const MobileNavbar = ({ links }: MobileNavbarProps) => {
          <button
             type="button"
             onClick={() => toggleOpen()}
-            className="fixed right-6 top-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-neutral-700/50 bg-[#131010]/40 text-white filter backdrop-blur"
+            className="fixed right-6 top-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-neutral-700/50 bg-[#131010]/40 text-white shadow-[inset_0px_0.0625rem_0_rgba(255,255,255,0.05),0_0.25rem_0.5rem_0_rgba(0,0,0,0.1)] filter backdrop-blur"
          >
             <Hamburger toggled={isOpen} size={20} color="#e5e7eb" />
          </button>

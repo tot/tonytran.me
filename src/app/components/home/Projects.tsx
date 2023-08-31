@@ -23,7 +23,7 @@ const PROJECTS = [
       border: "border-[#FF6969]/20",
    },
    {
-      year: "2022",
+      year: "2023",
       title: "Flux",
       description:
          "A platform for businesses to manage cryptocurrency finances.",

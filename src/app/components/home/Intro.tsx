@@ -23,7 +23,7 @@ const Intro = () => {
                <div className="">
                   I&apos;m{" "}
                   <TextTransition
-                     className="z-20 text-[#62fdca]"
+                     className="z-20 text-[#62fde8]"
                      inline
                      springConfig={presets.gentle}
                   >

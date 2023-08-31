@@ -17,8 +17,13 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body
-            className={cn(inter.variable, generalSans.variable, "bg-[#0c0b0b]")}
+            className={cn(
+               inter.variable,
+               generalSans.variable,
+               "relative bg-[#0c0b0b]"
+            )}
          >
+            <div className="absolute left-0 top-0 h-screen w-full bg-transparent bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.16)_0,rgba(0,163,255,0.14)_50%,rgba(12,11,11,0.2)_100%)]"></div>
             {children}
          </body>
       </html>

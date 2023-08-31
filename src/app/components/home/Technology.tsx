@@ -32,7 +32,7 @@ const Technology = ({
                      animate={{ opacity: 1, scale: 1 }}
                      exit={{ opacity: 0, scale: 0.5 }}
                      transition={{ duration: 0.25 }}
-                     className="absolute h-10 w-10 rounded-full bg-neutral-500/20"
+                     className="absolute -z-10 h-10 w-10 rounded-full border border-neutral-700/50 bg-neutral-500/20 bg-gradient-to-b from-neutral-700/50 to-transparent shadow-[inset_0px_0.0625rem_0_rgba(255,255,255,0.05),0_0.25rem_0.5rem_0_rgba(0,0,0,0.1)]"
                   />
                )}
             </AnimatePresence>
