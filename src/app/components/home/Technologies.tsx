@@ -80,7 +80,7 @@ const Technologies = () => {
             className="relative mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4"
          >
             <div className="absolute top-0 -z-10 h-full w-full">
-               <div className="absolute bottom-auto left-auto right-0 top-0 h-[300px] w-[300px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
+               <div className="absolute bottom-auto left-auto right-0 top-0 h-[300px] w-[300px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.25)] opacity-50 blur-[80px]"></div>
             </div>
             {TECH.map((item) => (
                <Technology

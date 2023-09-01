@@ -1,3 +1,5 @@
+"use client"
+
 import { useWindowSize } from "@uidotdev/usehooks"
 import MobileNavbar from "./MobileNavbar"
 import DesktopNavbar from "./DesktopNavbar"

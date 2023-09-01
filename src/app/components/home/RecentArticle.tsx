@@ -1,6 +1,5 @@
 import { AnimatePresence, motion, useCycle } from "framer-motion"
 import Link from "next/link"
-import { FC } from "react"
 
 interface RecentArticleProps {
    title: string

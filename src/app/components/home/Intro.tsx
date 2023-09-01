@@ -1,7 +1,16 @@
-import { useEffect, useState } from "react"
+import Link from "next/link"
+import { ReactNode, useEffect, useState } from "react"
 import TextTransition, { presets } from "react-text-transition"
 
 const TITLES = ["a developer", "a designer", "an entrepreneur"]
+
+interface HighlightProps {
+   children?: ReactNode
+}
+
+const Highlight = ({ children }: HighlightProps) => {
+   return <span className="text-[#62fde8]">{children}</span>
+}
 
 const Intro = () => {
    const [index, setIndex] = useState(0)
@@ -13,7 +22,7 @@ const Intro = () => {
       return () => clearTimeout(intervalId)
    }, [])
    return (
-      <section className="gap-6 px-6 py-8 pt-12 md:py-16 lg:grid lg:grid-cols-1 lg:gap-12 lg:px-8 lg:py-32">
+      <section className="gap-6 px-6 py-8 pt-12 md:py-16 md:pt-24 lg:grid lg:grid-cols-1 lg:gap-12 lg:px-8 lg:py-32">
          <div className="">
             <div className="font-general-sans text-4xl font-bold tracking-wide text-white lg:text-5xl">
                <h1 className="">
@@ -36,11 +45,11 @@ const Intro = () => {
 
                <p className="">
                   I love working on projects in the{" "}
-                  <span className="text-[#62fde8]">startup</span>,{" "}
-                  <span className="text-[#62fde8]">cybersecurity</span>,{" "}
-                  <span className="text-[#62fde8]">finance</span>, and{" "}
-                  <span className="text-[#62fde8]">software automation</span>{" "}
-                  spaces. Right now, I&apos;m building{" "}
+                  <Highlight>startup</Highlight>,{" "}
+                  <Highlight>cybersecurity</Highlight>,{" "}
+                  <Highlight>finance</Highlight>, and{" "}
+                  <Highlight>software automation</Highlight> spaces. Right now,
+                  I&apos;m building{" "}
                   <a
                      href="https://github.com/tot/musicmates"
                      className="text-neutral-100 underline"
@@ -53,9 +62,9 @@ const Intro = () => {
 
                <p className="">
                   Check out my{" "}
-                  <a href="#" className="text-neutral-100 underline">
+                  <Link href="/blog" className="text-neutral-100 underline">
                      blog
-                  </a>{" "}
+                  </Link>{" "}
                   where I detail my experiences building projects, share
                   insights about technologies, and jot down thoughts.
                </p>

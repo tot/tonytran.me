@@ -1,6 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { cn, generalSans, inter } from "@utils/utils"
+import Navbar from "./components/Navbar"
 
 export const metadata: Metadata = {
    title: "Create Next App",
@@ -23,7 +24,7 @@ export default function RootLayout({
                "relative bg-[#0c0b0b]"
             )}
          >
-            <div className="absolute left-0 top-0 h-screen w-full bg-transparent bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.16)_0,rgba(0,163,255,0.14)_50%,rgba(12,11,11,0.2)_100%)]"></div>
+            <Navbar />
             {children}
          </body>
       </html>
