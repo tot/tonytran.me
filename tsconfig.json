@@ -1,5 +1,6 @@
 {
    "compilerOptions": {
+      "baseUrl": ".",
       "target": "es5",
       "lib": ["dom", "dom.iterable", "esnext"],
       "allowJs": true,
@@ -20,10 +21,17 @@
       ],
       "paths": {
          "@/*": ["./src/*"],
-         "@utils/*": ["./src/app/utils/*"]
+         "@utils/*": ["./src/app/utils/*"],
+         "contentlayer/generated": ["./.contentlayer/generated"]
       },
       "forceConsistentCasingInFileNames": true
    },
-   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+   "include": [
+      "next-env.d.ts",
+      "**/*.ts",
+      "**/*.tsx",
+      ".next/types/**/*.ts",
+      ".contentlayer/generated"
+   ],
    "exclude": ["node_modules"]
 }
