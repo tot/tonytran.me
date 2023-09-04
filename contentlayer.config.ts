@@ -2,22 +2,33 @@ import { defineDocumentType } from "contentlayer/source-files"
 import { makeSource } from "contentlayer/source-remote-files"
 import { spawn } from "node:child_process"
 import { exists } from "fs-extra"
+import readingTime from "reading-time"
 
 export const Post = defineDocumentType(() => ({
    name: "Post",
-   filePathPattern: `**/*.md`,
+   filePathPattern: `**/*.mdx`,
+   contentType: "mdx",
    fields: {
       title: { type: "string", required: true },
       description: {
          type: "string",
          required: true,
       },
-      date: { type: "date", required: true },
+      publishedDate: { type: "date", required: true },
+      revisedDate: { type: "date", required: false },
    },
    computedFields: {
       url: {
          type: "string",
          resolve: (post) => `/blog/${post._raw.flattenedPath}`,
+      },
+      readingTime: {
+         type: "json",
+         resolve: (doc) => readingTime(doc.body.raw).text,
+      },
+      wordCount: {
+         type: "number",
+         resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
       },
    },
 }))
@@ -42,7 +53,7 @@ const runBashCommand = (command: string) =>
 
 const syncContentFromGit = async (contentDir: string) => {
    const syncRun = async () => {
-      const gitUrl = `https://${process.env.GITHUB_TOKEN}@github.com/tot/blog-posts.git`
+      const gitUrl = `https://${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_USER}/${process.env.REPO_NAME}.git`
 
       const isDirExists = await exists("blog-posts")
 
@@ -83,8 +94,8 @@ const syncContentFromGit = async (contentDir: string) => {
 
 export default makeSource({
    syncFiles: syncContentFromGit,
-   contentDirPath: ".",
-   contentDirInclude: ["blog-posts"],
+   contentDirPath: process.env.REPO_NAME as string,
+   // contentDirInclude: [process.env.REPO_NAME as string],
    documentTypes: [Post],
    disableImportAliasWarning: true,
 })
