@@ -1,52 +1,31 @@
-"use client"
-
-import Image from "next/image"
-import { compareDesc, format, parseISO } from "date-fns"
-import { allPosts, Post } from "contentlayer/generated"
-import Link from "next/link"
-
-function PostCard(post: Post) {
-   return (
-      <div className="mb-8">
-         <h2 className="mb-1 text-xl">
-            <Link
-               href={post.url}
-               className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
-            >
-               {post.title}
-            </Link>
-         </h2>
-         <time
-            dateTime={post.date}
-            className="mb-2 block text-xs text-gray-600"
-         >
-            {format(parseISO(post.date), "LLLL d, yyyy")}
-         </time>
-         <div
-            className="text-sm [&>*:last-child]:mb-0 [&>*]:mb-3"
-            dangerouslySetInnerHTML={{ __html: post.body.html }}
-         />
-      </div>
-   )
-}
+import { compareDesc } from "date-fns"
+import { allPosts } from "contentlayer/generated"
+import ArticleCard from "../components/blog/ArticleCard"
 
 export default function Blog() {
    const posts = allPosts.sort((a, b) =>
-      compareDesc(new Date(a.date), new Date(b.date))
+      compareDesc(new Date(a.publishedDate), new Date(b.publishedDate))
    )
 
    return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-         {posts.map((post, idx) => (
-            <PostCard key={idx} {...post} />
-         ))}
-         <button
-            type="button"
-            onClick={() => console.log(allPosts)}
-            className="text-white"
-         >
-            log posts
-         </button>
+      <main className="mx-auto w-full max-w-4xl">
+         <section className="border-b border-neutral-700/75 pb-8">
+            <h1 className="font-general-sans text-5xl font-bold text-neutral-100">
+               Blog
+            </h1>
+            <p className="mt-4 font-sans text-lg leading-8 text-neutral-300">
+               Explore the world from my shoes. Read about my journey through
+               project development, technology exploration, and personal
+               reflections.
+            </p>
+         </section>
+         <section className="mt-10 space-y-8">
+            {posts.map((post, idx) => (
+               <div key={idx}>
+                  <ArticleCard {...post} />
+               </div>
+            ))}
+         </section>
       </main>
    )
 }

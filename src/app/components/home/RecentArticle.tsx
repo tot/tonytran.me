@@ -22,7 +22,7 @@ const RecentArticle = ({ title, preview, slug, date }: RecentArticleProps) => {
                   <time className="font-mono text-sm font-semibold text-indigo-500">
                      {date}
                   </time>
-                  <h3 className="mt-2 font-general-sans text-base font-bold leading-8 tracking-wide text-neutral-100">
+                  <h3 className="mt-2 font-general-sans text-lg font-bold leading-8 tracking-wide text-neutral-100">
                      {title}
                   </h3>
                   <p className="font-sans text-sm leading-6 text-neutral-400">
