@@ -39,7 +39,7 @@ const DesktopNavbar = ({ links }: DesktopNavbarProps) => {
                      <span>{name}</span>
                      {slug === hoveredRoute && (
                         <motion.div
-                           className="absolute bottom-0 left-0 -z-10 h-full w-full rounded-full bg-neutral-700/60 shadow-[inset_0px_0.0625rem_0_rgba(255,255,255,0.05),0_0.25rem_0.5rem_0_rgba(0,0,0,0.1)]"
+                           className="absolute bottom-0 left-0 -z-10 h-full w-full rounded-full bg-neutral-700/20 shadow-[inset_0px_0.0625rem_0_rgba(255,255,255,0.05),0_0.25rem_0.5rem_0_rgba(0,0,0,0.1)] filter backdrop-blur"
                            layoutId="navbar"
                            aria-hidden="true"
                            transition={{
