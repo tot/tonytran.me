@@ -22,6 +22,7 @@
       "framer-motion": "^10.16.1",
       "fs-extra": "^11.1.1",
       "hamburger-react": "^2.5.0",
+      "lodash": "^4.17.21",
       "next": "^13.4.15",
       "next-contentlayer": "^0.3.4",
       "postcss": "8.4.28",
@@ -36,6 +37,7 @@
    },
    "devDependencies": {
       "@types/fs-extra": "^11.0.1",
+      "@types/lodash": "^4.14.198",
       "prettier": "^3.0.2",
       "prettier-plugin-tailwindcss": "^0.5.3"
    }
