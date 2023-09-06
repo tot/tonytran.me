@@ -21,6 +21,7 @@ const Intro = () => {
       }, 5000)
       return () => clearTimeout(intervalId)
    }, [])
+
    return (
       <section className="gap-6 px-6 py-8 pt-12 md:py-16 md:pt-24 lg:grid lg:grid-cols-1 lg:gap-12 lg:px-8 lg:py-32">
          <div className="">
