@@ -2,7 +2,7 @@ import { cn } from "@/app/utils/utils"
 import Image from "next/image"
 import { HTMLProps } from "react"
 
-const Img = ({ src, alt }: HTMLProps<HTMLImageElement>) => {
+const img = ({ src, alt }: HTMLProps<HTMLImageElement>) => {
    const _alt = (alt?.split("{")[0].trim() ?? alt) || ""
    const props = alt?.split("{")[1]
    const width = parseInt(props?.match(/w:\s*(\d+)/)?.[1] ?? "700")
@@ -28,4 +28,4 @@ const Img = ({ src, alt }: HTMLProps<HTMLImageElement>) => {
    )
 }
 
-export default Img
+export default img
