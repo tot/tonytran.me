@@ -42,14 +42,14 @@ export const inter = Inter({
 
 export const formatDate = (date: Date) => {
    const currentDate = new Date()
-   const thirtyDaysAgo = sub(currentDate, { days: 30 })
+   const sevenDaysAgo = sub(currentDate, { days: 7 })
 
-   const isPastThirtyDays = isWithinInterval(date, {
-      start: thirtyDaysAgo,
+   const isPastSevenDays = isWithinInterval(date, {
+      start: sevenDaysAgo,
       end: currentDate,
    })
 
-   if (isPastThirtyDays) {
+   if (isPastSevenDays) {
       return formatDistance(date, currentDate, {
          addSuffix: true,
          includeSeconds: true,
