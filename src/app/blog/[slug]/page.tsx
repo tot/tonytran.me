@@ -2,11 +2,16 @@ import Article from "@/app/components/blog/Article"
 import { allPosts } from "contentlayer/generated"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import { notFound } from "next/navigation"
+import img from "@/app/components/blog/Img"
 
 export async function generateStaticParams() {
    return allPosts.map((post) => ({
       slug: post._raw.flattenedPath,
    }))
+}
+
+const articleComponents = {
+   img,
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -22,10 +27,8 @@ export default function Page({ params }: { params: { slug: string } }) {
    return (
       <div>
          <Article {...post}>
-            <MDXContent />
+            <MDXContent components={articleComponents} />
          </Article>
-         {/* Some code ... */}
-         {/* <MDXContent /> */}
       </div>
    )
 }

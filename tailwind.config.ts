@@ -20,6 +20,9 @@ const config: Config = {
             "general-sans": ["var(--font-general-sans)"],
             sans: ["var(--font-inter)"],
          },
+         aspectRatio: {
+            "blog-image": "16 / 9",
+         },
       },
    },
    plugins: [],
