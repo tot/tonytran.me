@@ -8,18 +8,18 @@ export default function Blog() {
    )
 
    return (
-      <main className="mx-auto w-full max-w-4xl">
-         <section className="px-4">
-            <h1 className="font-general-sans text-5xl font-bold text-neutral-100">
+      <main className="mx-auto w-full">
+         <section className="pt-8 md:pt-24 lg:pt-0">
+            <h1 className="font-general-sans text-3xl font-bold text-neutral-100">
                Blog
             </h1>
-            <p className="mt-4 font-sans text-lg leading-8 text-neutral-400">
+            <p className="mt-2 font-sans text-base leading-7 text-neutral-400">
                Explore the world from my shoes. Read about my journey through
                project development, technology exploration, and personal
                reflections.
             </p>
          </section>
-         <div className="my-8 h-px w-full bg-neutral-700/50" />
+         <div className="my-6 h-px w-full bg-neutral-700/50" />
          <ArticlesList articles={articles} />
       </main>
    )

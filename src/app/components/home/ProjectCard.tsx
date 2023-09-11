@@ -46,7 +46,7 @@ const ProjectCard = ({
                <BiUpArrowAlt className="translate h-6 w-6 rotate-45 text-white" />
             </motion.div>
             <div className="">
-               <time className={cn("font-mono text-sm", dateColor)}>
+               <time className={cn("font-sans text-sm font-medium", dateColor)}>
                   {year}
                </time>
                <p className="mt-2 font-general-sans text-base font-bold leading-8 tracking-wide text-neutral-100">
