@@ -7,11 +7,7 @@ interface SectionProps {
 }
 
 const Section = ({ children, className }: SectionProps) => {
-   return (
-      <section className={cn("px-6 py-8 lg:px-8 lg:py-12", className)}>
-         {children}
-      </section>
-   )
+   return <section className={cn("px-6 py-8", className)}>{children}</section>
 }
 
 export default Section

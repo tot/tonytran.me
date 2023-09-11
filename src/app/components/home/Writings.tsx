@@ -47,10 +47,10 @@ const Writings = () => {
                <AllPostsButton />
             </div>
          </span>
-         <section className="mt-6">
+         <section className="mt-4">
             <ArticlesList articles={articles} />
          </section>
-         <div className="mt-4 flex justify-center md:hidden">
+         <div className="mt-6 flex justify-center md:hidden">
             <AllPostsButton />
          </div>
       </Section>
