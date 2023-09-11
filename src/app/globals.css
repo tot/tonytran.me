@@ -93,7 +93,7 @@ pre code {
 }
 
 .prose {
-   @apply max-w-[55rem] !leading-7 sm:text-lg sm:!leading-9 md:text-xl;
+   @apply max-w-[50rem] !leading-7 sm:text-lg sm:!leading-9 md:text-xl;
 }
 
 [data-line] {

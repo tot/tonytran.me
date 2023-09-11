@@ -15,7 +15,7 @@ const LINKS = [
 const Footer = () => {
    return (
       <>
-         <div className="h-px w-full max-w-[52rem] bg-neutral-800/75" />
+         <div className="h-px w-full max-w-[50rem] bg-neutral-800/75" />
          <footer className="flex items-baseline justify-between p-6">
             {/* <h3 className="font-sans text-sm font-semibold text-neutral-500">
                Tony Tran

@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { ReactNode, useEffect, useState } from "react"
 import TextTransition, { presets } from "react-text-transition"
