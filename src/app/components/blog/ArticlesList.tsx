@@ -22,7 +22,7 @@ const ArticlesList = ({ articles }: ArticlesListProps) => {
       }
    })
    return (
-      <div className="space-y-2" onMouseLeave={() => setActiveItem("")}>
+      <div className="space-y-4" onMouseLeave={() => setActiveItem("")}>
          {articles.map((article, idx) => (
             <ArticleCard
                key={idx}
