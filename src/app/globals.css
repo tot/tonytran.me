@@ -63,7 +63,7 @@ body {
 
 code {
    counter-reset: line;
-   @apply rounded-lg border border-neutral-800/70 bg-neutral-800/30 !text-sm !leading-loose;
+   @apply rounded-lg border border-neutral-800/50 bg-neutral-800/30 !text-sm !leading-loose;
 }
 
 code > [data-line]::before {
@@ -73,7 +73,7 @@ code > [data-line]::before {
    /* Other styling */
    display: inline-block;
    width: 1rem;
-   margin-right: 2rem;
+   margin-right: 1.5rem;
    text-align: right;
    color: gray;
 }
@@ -131,7 +131,7 @@ pre code {
 }
 
 [data-rehype-pretty-code-title] {
-   @apply rounded-t-lg border border-neutral-800/70 bg-neutral-700/30 p-2 font-mono text-base text-neutral-100;
+   @apply rounded-t-lg border border-neutral-800/50 bg-neutral-700/30 p-2 font-mono text-base text-neutral-100;
 }
 
 [data-rehype-pretty-code-fragment] {
@@ -144,4 +144,16 @@ span[data-rehype-pretty-code-fragment] code {
 
 [data-rehype-pretty-code-caption] {
    @apply mt-4 flex justify-center text-center text-sm text-neutral-400;
+}
+
+.mdx-blockquote div {
+   @apply !m-0;
+}
+
+.footnotes #footnote-label {
+   @apply text-lg font-semibold text-neutral-100;
+}
+
+.footnotes li div {
+   @apply inline-block;
 }

@@ -11,9 +11,11 @@ import {
    blockquote,
    ul,
    ol,
-   hr,
    li,
+   hr,
+   strong,
 } from "@/app/components/mdx"
+import { HTMLProps } from "react"
 
 export async function generateStaticParams() {
    return allPosts.map((post) => ({
@@ -23,7 +25,7 @@ export async function generateStaticParams() {
 
 const articleComponents = {
    img,
-   // p,
+   p,
    h1,
    h2,
    h3,
@@ -31,7 +33,8 @@ const articleComponents = {
    ul,
    ol,
    hr,
-   // li,
+   strong,
+   li,
 }
 
 export default function Page({ params }: { params: { slug: string } }) {

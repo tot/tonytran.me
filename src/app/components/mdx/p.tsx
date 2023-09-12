@@ -7,10 +7,9 @@ import { HTMLProps } from "react"
  */
 const p = (props: HTMLProps<HTMLParagraphElement>) => {
    return (
-      <div
-         className={cn("my-4 text-neutral-300", props.className)}
-         {...props}
-      />
+      <div className={cn("py-2 text-neutral-300", props.className)}>
+         {props.children}
+      </div>
    )
 }
 

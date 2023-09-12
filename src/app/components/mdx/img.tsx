@@ -10,7 +10,7 @@ const img = ({ src, alt }: HTMLProps<HTMLImageElement>) => {
    const caption = props?.match(/cap:\s*"(.*?)"/)?.[1]
 
    return (
-      <div className="my-8">
+      <figure className="py-8">
          <div className="mx-auto flex h-fit w-fit flex-col" aria-label={_alt}>
             <Image src={src || ""} alt={_alt} width={width} height={height} />
          </div>
@@ -21,10 +21,10 @@ const img = ({ src, alt }: HTMLProps<HTMLImageElement>) => {
                   maxWidth: width,
                }}
             >
-               {_alt}
+               {caption}
             </div>
          ) : null}
-      </div>
+      </figure>
    )
 }
 
