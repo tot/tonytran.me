@@ -1,7 +1,4 @@
-"use client"
-
 import { Post } from "contentlayer/generated"
-import { useState, useEffect } from "react"
 import ArticleCard from "./ArticleCard"
 
 interface ArticlesListProps {
@@ -9,27 +6,10 @@ interface ArticlesListProps {
 }
 
 const ArticlesList = ({ articles }: ArticlesListProps) => {
-   const [activeItem, setActiveItem] = useState<string>("")
-
-   useEffect(() => {
-      const handleResize = () => {
-         setActiveItem("")
-      }
-
-      window.addEventListener("resize", handleResize)
-      return () => {
-         window.removeEventListener("resize", handleResize)
-      }
-   })
    return (
-      <div className="space-y-4" onMouseLeave={() => setActiveItem("")}>
+      <div className="space-y-4">
          {articles.map((article, idx) => (
-            <ArticleCard
-               key={idx}
-               {...article}
-               activeItem={activeItem}
-               setActiveItem={(item: string) => setActiveItem(item)}
-            />
+            <ArticleCard key={idx} {...article} />
          ))}
       </div>
    )

@@ -2,7 +2,7 @@
 
 import { formatDate } from "@utils/utils"
 import { parseISO } from "date-fns"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import Link from "next/link"
 
 interface ArticleCardProps {
@@ -11,8 +11,6 @@ interface ArticleCardProps {
    description: string
    publishedDate: string
    readingTime: string
-   activeItem: string
-   setActiveItem: (item: string) => void
 }
 
 const ArticleCard = ({
@@ -21,33 +19,45 @@ const ArticleCard = ({
    description,
    publishedDate,
    readingTime,
-   activeItem,
-   setActiveItem,
 }: ArticleCardProps) => {
    const date = parseISO(publishedDate)
 
    return (
-      <motion.div
-         onMouseEnter={() => setActiveItem(title)}
-         onTouchStart={() => setActiveItem(title)}
-         whileTap={{ scale: 0.95 }}
-      >
+      <motion.div whileTap={{ scale: 0.95 }}>
          <Link href={url} className="">
-            <div className="group relative flex w-full rounded-lg border-transparent font-sans transition-colors duration-200">
-               <div className="mb-2 flex w-[10rem] items-start">
-                  <div className="font-sans text-sm font-medium text-neutral-400/80">
+            <div className="relative w-full rounded-lg p-4 font-sans transition-colors duration-200 hover:bg-neutral-700/10">
+               <div className="">
+                  <h2 className="font-general-sans text-xl font-semibold leading-8 tracking-wide text-neutral-100">
+                     {title}
+                  </h2>
+                  <p className="font-sans text-base leading-6 text-neutral-400">
+                     {description}
+                  </p>
+               </div>
+               <div className="flex items-center space-x-1 pt-1">
+                  {/* <div className="w-fit rounded-lg font-sans text-sm font-medium text-neutral-400/80">
                      <time dateTime={publishedDate} className="leading-8">
                         {formatDate(date)}
                      </time>
                   </div>
-               </div>
-               <div className="flex flex-1 flex-col">
-                  <h2 className="font-general-sans text-lg font-semibold leading-8 tracking-wide text-neutral-100 group-hover:underline">
-                     {title}
-                  </h2>
-                  <p className="font-sans text-sm leading-6 text-neutral-400">
-                     {description}
-                  </p>
+                  <span className="text-sm text-neutral-500">&bull;</span>
+                  <div className="w-fit rounded-lg font-sans text-sm font-medium text-neutral-400/80">
+                     <time dateTime={publishedDate} className="leading-8">
+                        {readingTime}
+                     </time>
+                  </div> */}
+                  <div className="flex items-center space-x-2 pt-2">
+                     <div className="w-fit rounded-lg border border-neutral-700/20 bg-neutral-800/10 px-1.5 font-sans text-sm font-medium text-neutral-400/80">
+                        <time dateTime={publishedDate} className="leading-8">
+                           {formatDate(date)}
+                        </time>
+                     </div>
+                     <div className="w-fit rounded-lg border border-neutral-700/20 bg-neutral-800/10 px-1.5 font-sans text-sm font-medium text-neutral-400/80">
+                        <time dateTime={publishedDate} className="leading-8">
+                           {readingTime}
+                        </time>
+                     </div>
+                  </div>
                </div>
             </div>
          </Link>

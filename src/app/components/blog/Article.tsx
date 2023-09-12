@@ -25,11 +25,11 @@ const Article = ({
                {title}
             </h1>
             <p className="mt-4 font-sans text-base font-medium text-neutral-400/80">
-               {format(parseISO(publishedDate), "MMMM do, yyyy")}
+               {format(parseISO(publishedDate), "LLLL d, yyyy")}
                {revisedDate ? (
                   <span>
                      <span className="px-2">&bull;</span>
-                     Updated {format(parseISO(revisedDate), "MMMM do, yyyy")}
+                     Updated {format(parseISO(revisedDate), "LLLL d, yyyy")}
                   </span>
                ) : null}
                <span>
@@ -38,10 +38,10 @@ const Article = ({
                </span>
             </p>
          </div>
-         <div className="my-8 h-px w-full bg-neutral-700/50" />
-         <article className="mb-8 font-sans text-neutral-300">
-            {children}
-         </article>
+         <div className="pb-4 pt-8">
+            <div className="h-px w-full bg-neutral-700/50" />
+         </div>
+         <article className="mb-8 font-sans">{children}</article>
       </div>
    )
 }
