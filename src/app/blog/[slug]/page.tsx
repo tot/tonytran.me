@@ -4,6 +4,7 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import { notFound } from "next/navigation"
 import {
    img,
+   a,
    p,
    h1,
    h2,
@@ -24,6 +25,7 @@ export async function generateStaticParams() {
 
 const articleComponents = {
    img,
+   a,
    p,
    h1,
    h2,
