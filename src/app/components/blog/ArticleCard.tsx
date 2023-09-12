@@ -4,6 +4,7 @@ import { formatDate } from "@utils/utils"
 import { parseISO } from "date-fns"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { BiCalendarAlt, BiTime } from "react-icons/bi"
 
 interface ArticleCardProps {
    url: string
@@ -30,21 +31,19 @@ const ArticleCard = ({
                   <h2 className="font-general-sans text-xl font-semibold leading-8 tracking-wide text-neutral-100">
                      {title}
                   </h2>
-                  <p className="font-sans text-base leading-6 text-neutral-400">
+                  <p className="pt-1 font-sans text-base leading-6 text-neutral-400">
                      {description}
                   </p>
                </div>
-               <div className="flex items-center space-x-1 pt-1">
+               <div className="flex items-center space-x-1 pt-2">
                   <div className="flex items-center space-x-2 pt-2">
-                     <div className="w-fit rounded-lg border border-neutral-700/20 bg-neutral-800/10 px-1.5 font-sans text-sm font-medium text-neutral-400/80">
-                        <time dateTime={publishedDate} className="leading-8">
-                           {formatDate(date)}
-                        </time>
+                     <div className="flex w-fit items-center space-x-1 rounded-lg border border-neutral-700/40 bg-neutral-800/30 px-2 py-1 font-sans text-xs font-medium text-neutral-400/80">
+                        <BiCalendarAlt className="h-3 w-3" />
+                        <time className="">{formatDate(date)}</time>
                      </div>
-                     <div className="w-fit rounded-lg border border-neutral-700/20 bg-neutral-800/10 px-1.5 font-sans text-sm font-medium text-neutral-400/80">
-                        <time dateTime={publishedDate} className="leading-8">
-                           {readingTime}
-                        </time>
+                     <div className="flex w-fit items-center space-x-1 rounded-lg border border-neutral-700/40 bg-neutral-800/30 px-2 py-1 font-sans text-xs font-medium text-neutral-400/80">
+                        <BiTime className="h-3 w-3" />
+                        <p className="">{readingTime}</p>
                      </div>
                   </div>
                </div>

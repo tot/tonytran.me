@@ -1,0 +1,9 @@
+export default function Photos() {
+   return (
+      <main className="relative mx-auto flex min-h-screen max-w-[50rem] flex-col">
+         <h1 className="pt-12 text-center font-general-sans text-3xl font-bold text-neutral-100 md:pt-24">
+            Page is under construction!
+         </h1>
+      </main>
+   )
+}
