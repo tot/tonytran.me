@@ -15,7 +15,6 @@ import {
    hr,
    strong,
 } from "@/app/components/mdx"
-import { HTMLProps } from "react"
 
 export async function generateStaticParams() {
    return allPosts.map((post) => ({

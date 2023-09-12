@@ -21,7 +21,7 @@ const Article = ({
    return (
       <div className="pt-8 md:pt-24 lg:pt-0">
          <div className="">
-            <h1 className="leading-12 font-general-sans text-3xl font-bold tracking-wide text-neutral-100">
+            <h1 className="leading-12 font-general-sans text-4xl font-semibold tracking-wide text-neutral-100">
                {title}
             </h1>
             <p className="mt-4 font-sans text-base font-medium text-neutral-400/80">
@@ -38,7 +38,7 @@ const Article = ({
                </span>
             </p>
          </div>
-         <div className="pb-4 pt-8">
+         <div className="pb-6 pt-8">
             <div className="h-px w-full bg-neutral-700/50" />
          </div>
          <article className="mb-8 font-sans">{children}</article>

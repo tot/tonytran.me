@@ -27,11 +27,11 @@ const Intro = () => {
    return (
       <section className="px-6 py-8 md:pt-24 lg:pt-32">
          <div className="">
-            <div className="font-general-sans text-3xl font-bold tracking-wide text-white lg:text-4xl">
+            <div className="font-general-sans text-4xl font-bold tracking-wide text-white md:text-5xl">
                <h1 className="">
                   Hello, world! <span className="waving-hand">👋</span>
                </h1>
-               <h1 className="mt-2">I&apos;m Tony Tran</h1>
+               <h1 className="mt-2 lg:mt-3">I&apos;m Tony Tran</h1>
             </div>
             <div className="mt-4 space-y-4 font-sans text-base leading-7 text-neutral-400 md:mt-8">
                <div className="">
