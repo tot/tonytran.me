@@ -35,17 +35,6 @@ const ArticleCard = ({
                   </p>
                </div>
                <div className="flex items-center space-x-1 pt-1">
-                  {/* <div className="w-fit rounded-lg font-sans text-sm font-medium text-neutral-400/80">
-                     <time dateTime={publishedDate} className="leading-8">
-                        {formatDate(date)}
-                     </time>
-                  </div>
-                  <span className="text-sm text-neutral-500">&bull;</span>
-                  <div className="w-fit rounded-lg font-sans text-sm font-medium text-neutral-400/80">
-                     <time dateTime={publishedDate} className="leading-8">
-                        {readingTime}
-                     </time>
-                  </div> */}
                   <div className="flex items-center space-x-2 pt-2">
                      <div className="w-fit rounded-lg border border-neutral-700/20 bg-neutral-800/10 px-1.5 font-sans text-sm font-medium text-neutral-400/80">
                         <time dateTime={publishedDate} className="leading-8">

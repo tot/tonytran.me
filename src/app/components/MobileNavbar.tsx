@@ -64,7 +64,7 @@ const NavbarBody = ({ links, toggleOpen }: NavbarBodyProps) => {
                exit={{ opacity: 0, transition: { delay: 0.7, duration: 0.3 } }}
                onClick={() => toggleOpen()}
                className="h-full w-full bg-neutral-900/30 filter backdrop-blur-sm"
-            ></motion.div>
+            />
             <motion.aside
                initial={{ width: 0 }}
                animate={{
