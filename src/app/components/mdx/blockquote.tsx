@@ -1,11 +1,11 @@
 import { cn } from "@/app/utils/utils"
 import { HTMLProps } from "react"
 
-const h1 = (props: HTMLProps<HTMLParagraphElement>) => {
+const blockquote = (props: HTMLProps<HTMLQuoteElement>) => {
    return (
-      <div
+      <blockquote
          className={cn(
-            "my-4 font-sans text-2xl font-bold text-neutral-100",
+            "my-4 border-l-2 border-neutral-700 px-4 py-2 font-serif",
             props.className
          )}
          {...props}
@@ -13,4 +13,4 @@ const h1 = (props: HTMLProps<HTMLParagraphElement>) => {
    )
 }
 
-export default h1
+export default blockquote

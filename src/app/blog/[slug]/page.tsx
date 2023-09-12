@@ -2,7 +2,18 @@ import Article from "@/app/components/blog/Article"
 import { allPosts } from "contentlayer/generated"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import { notFound } from "next/navigation"
-import { img, p, h1 } from "@/app/components/mdx"
+import {
+   img,
+   p,
+   h1,
+   h2,
+   h3,
+   blockquote,
+   ul,
+   ol,
+   hr,
+   li,
+} from "@/app/components/mdx"
 
 export async function generateStaticParams() {
    return allPosts.map((post) => ({
@@ -12,8 +23,15 @@ export async function generateStaticParams() {
 
 const articleComponents = {
    img,
-   p,
+   // p,
    h1,
+   h2,
+   h3,
+   blockquote,
+   ul,
+   ol,
+   hr,
+   // li,
 }
 
 export default function Page({ params }: { params: { slug: string } }) {

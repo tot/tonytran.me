@@ -1,5 +1,3 @@
-"use client"
-
 export default function Blog() {
    return (
       <main className="relative mx-auto flex min-h-screen max-w-[50rem] flex-col">

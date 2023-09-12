@@ -19,6 +19,7 @@ const config: Config = {
          fontFamily: {
             "general-sans": ["var(--font-general-sans)"],
             sans: ["var(--font-inter)"],
+            serif: ["var(--font-gambetta-serif)"],
          },
          aspectRatio: {
             "blog-image": "16 / 9",

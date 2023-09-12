@@ -1,11 +1,11 @@
 import { cn } from "@/app/utils/utils"
 import { HTMLProps } from "react"
 
-const h1 = (props: HTMLProps<HTMLParagraphElement>) => {
+const h3 = (props: HTMLProps<HTMLParagraphElement>) => {
    return (
       <div
          className={cn(
-            "my-4 font-sans text-2xl font-bold text-neutral-100",
+            "my-2 font-sans text-lg font-semibold text-neutral-100",
             props.className
          )}
          {...props}
@@ -13,4 +13,4 @@ const h1 = (props: HTMLProps<HTMLParagraphElement>) => {
    )
 }
 
-export default h1
+export default h3

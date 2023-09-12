@@ -36,6 +36,12 @@ export const inter = Inter({
    display: "swap",
 })
 
+export const gambettaSerif = localFont({
+   src: "../fonts/gambetta-serif/Gambetta-Variable.ttf",
+   variable: "--font-gambetta-serif",
+   display: "swap",
+})
+
 /**
  * Blog functions
  */

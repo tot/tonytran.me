@@ -8,7 +8,7 @@ import { HTMLProps } from "react"
 const p = (props: HTMLProps<HTMLParagraphElement>) => {
    return (
       <div
-         className={cn("my-4 font-sans text-neutral-300", props.className)}
+         className={cn("my-4 text-neutral-300", props.className)}
          {...props}
       />
    )

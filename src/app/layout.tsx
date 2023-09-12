@@ -1,6 +1,6 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { cn, generalSans, inter } from "@utils/utils"
+import { cn, generalSans, inter, gambettaSerif } from "@utils/utils"
 import Navbar from "./components/Navbar"
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export default function RootLayout({
             className={cn(
                inter.variable,
                generalSans.variable,
+               gambettaSerif.variable,
                "relative bg-[#0c0b0b]"
             )}
          >
