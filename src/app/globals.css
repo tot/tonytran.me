@@ -93,7 +93,7 @@ pre code {
 }
 
 .prose {
-   @apply max-w-[50rem] !leading-7 sm:text-lg sm:!leading-9 md:text-xl;
+   @apply max-w-[50rem] !leading-7;
 }
 
 [data-line] {
@@ -131,11 +131,11 @@ pre code {
 }
 
 [data-rehype-pretty-code-title] {
-   @apply rounded-t-lg border border-neutral-800/50 bg-neutral-700/30 p-2 font-mono text-base text-neutral-100;
+   @apply rounded-t-lg border border-neutral-800/50 bg-neutral-700/30 p-2 px-4 font-mono text-sm text-neutral-100;
 }
 
 [data-rehype-pretty-code-fragment] {
-   @apply py-8;
+   @apply py-4;
 }
 
 span[data-rehype-pretty-code-fragment] code {
@@ -143,7 +143,7 @@ span[data-rehype-pretty-code-fragment] code {
 }
 
 [data-rehype-pretty-code-caption] {
-   @apply mt-4 flex justify-center text-center text-sm text-neutral-400;
+   @apply flex justify-center pt-4 text-center text-sm text-neutral-400;
 }
 
 .mdx-blockquote div {

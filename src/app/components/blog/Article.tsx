@@ -19,11 +19,11 @@ const Article = ({
    return (
       <div className="pt-8 md:pt-24 lg:pt-0">
          <div className="">
-            <h1 className="leading-12 font-general-sans text-4xl font-semibold tracking-wide text-neutral-100">
+            <h1 className="leading-12 max-w-prose font-general-sans text-3xl font-semibold tracking-wide text-neutral-100 md:text-4xl">
                {title}
             </h1>
-            <p className="mt-4 font-sans text-base font-medium text-neutral-400/80">
-               {format(parseISO(publishedDate), "LLLL d, yyyy")}
+            <p className="mt-4 font-sans text-sm font-medium text-neutral-400/80">
+               <span>{format(parseISO(publishedDate), "LLLL d, yyyy")}</span>
                {revisedDate ? (
                   <span>
                      <span className="px-2">&bull;</span>
@@ -39,7 +39,9 @@ const Article = ({
          <div className="pb-6 pt-8">
             <div className="h-px w-full bg-neutral-700/50" />
          </div>
-         <article className="mb-8 font-sans">{children}</article>
+         <article className="prose mb-8 max-w-prose font-sans">
+            {children}
+         </article>
       </div>
    )
 }
