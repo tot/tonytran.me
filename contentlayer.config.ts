@@ -12,7 +12,7 @@ import path from "path"
 import fs from "fs"
 import remarkGfm from "remark-gfm"
 
-const SYNC_ASSETS_FOLDER = "./blog-posts/assets"
+const SYNC_ASSETS_FOLDER = `./${process.env.REPO_NAME}/published/assets`
 const PUBLIC_ASSETS_FOLDER = "./public/assets/blog"
 
 export const Post = defineDocumentType(() => ({
@@ -115,7 +115,7 @@ const syncContentFromGit = async (contentDir: string) => {
 
 export default makeSource({
    syncFiles: syncContentFromGit,
-   contentDirPath: process.env.REPO_NAME as string,
+   contentDirPath: `${process.env.REPO_NAME as string}/published`,
    documentTypes: [Post],
    disableImportAliasWarning: true,
    mdx: {
