@@ -2,6 +2,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { cn, generalSans, inter, gambettaSerif } from "@utils/utils"
 import Navbar from "./components/Navbar"
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
    title: "Create Next App",
@@ -27,6 +28,7 @@ export default function RootLayout({
          >
             <Navbar />
             {children}
+            <Analytics />
          </body>
       </html>
    )
