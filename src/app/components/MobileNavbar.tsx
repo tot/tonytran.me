@@ -4,8 +4,7 @@ import { usePathname } from "next/navigation"
 import { NavLink } from "@utils/types"
 import { useLockBodyScroll } from "@uidotdev/usehooks"
 import { cn } from "@utils/utils"
-import { Pivot as Hamburger } from "hamburger-react"
-import { BiLogoLinkedin, BiLogoGithub, BiX } from "react-icons/bi"
+import { BiLogoLinkedin, BiLogoGithub, BiX, BiMenu } from "react-icons/bi"
 
 const SOCIALS = [
    {
@@ -144,7 +143,7 @@ const MobileNavbar = ({ links }: MobileNavbarProps) => {
             <h3 className="font-general-sans text-base font-bold">
                tony&apos;s space
             </h3>
-            <Hamburger toggled={isOpen} size={20} color="#e5e7eb" />
+            <BiMenu className="h-6 w-6" />
          </button>
       </>
    )
