@@ -9,7 +9,7 @@ const AllPostsButton = () => {
    const [isHover, setHover] = useState(false)
    return (
       <div className="">
-         <Link href="">
+         <Link href="/blog">
             <motion.button
                className="flex h-10 items-center justify-center rounded border-neutral-800 px-3 font-sans text-base text-neutral-300 shadow transition-colors duration-150 hover:bg-neutral-700/25 focus:bg-neutral-700/15"
                type="button"
