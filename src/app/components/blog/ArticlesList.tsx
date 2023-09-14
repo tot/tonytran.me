@@ -8,9 +8,15 @@ interface ArticlesListProps {
 const ArticlesList = ({ articles }: ArticlesListProps) => {
    return (
       <div className="space-y-4">
-         {articles.map((article, idx) => (
-            <ArticleCard key={idx} {...article} />
-         ))}
+         {articles.length > 0 ? (
+            articles.map((article, idx) => (
+               <ArticleCard key={idx} {...article} />
+            ))
+         ) : (
+            <p className="text-center font-sans text-base text-neutral-500">
+               No articles yet.
+            </p>
+         )}
       </div>
    )
 }
