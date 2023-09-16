@@ -1,0 +1,115 @@
+---
+title: Designing My Blog and What Took So Long?
+publishedDate: 2023-09-16T19:57:42.182Z
+description: After postponing the projct for nearly two years, I finally built my blog. Dive into why I built my blog, what kinds of challenges I faced, and how I was ultimately able to complete it.
+---
+
+# About Time
+
+Nearly two years ago, I had the idea of starting a blog. During the COVID-19 pandemic era, I wanted to share my experiences freelancing within the sneaker botting industry. Unfortunately, time wasn't on my side since the responsibilities of a junior high school student enveloped me.
+
+However, now that I'm in my first semester of sophomore year of college, I have a bit more free time to explore writing and documenting my thoughts.
+
+<Gap />
+
+# Blog Design 101
+
+## Framework
+
+I chose to build with Next.js 13's App Router because of the benefits of page layouts and React server components. Although many people have their qualms with the App Router, I believe it's better to adopt it now rather than further down the line where I'd have to do more work switching from the anitiquated Pages Router.
+
+In addition to Next.js, I considered using [Astro](https://astro.build) because its island architecture paradigm loaded pages quicker than Next.js and was good for static pages. However, I kept with Next.js because of the larger ecosystem, which offers more development support and long-term stability. In the future, I'll revisit this issue and most likely switch if Next.js proves to be less performant than Astro.
+
+## Content Management System
+
+Like many people on [r/webdev](https://www.reddit.com/r/webdev/search/?q=headless%20cms), I initially fell into the rabbit-hole of searching for a headless content management system. I wanted a solution with little overhead and friction for writing and publishing articles. I tried a range of providers like [Payload](https://payloadcms.com/), [Contentful](https://www.contentful.com/), and [Prismic](https://prismic.io/). However, these had downsides like service costs, customizability, and developer experience.
+
+### Keep It Simple, Stupid!
+
+After hours down the drain, I remembered the timeless saying, _"Keep it simple, stupid!"_. I drowned in all these trendy tools that I missed the most simple yet efficient solution for my use case: local markdown files. With Next.js, I could setup a Markdown blog easily and quickly with little overhead. Plus, with the addition of MDX, I could integrate React components with my Markdown files.
+
+### Bleeding Responsibly
+
+To load my markdown files, I used [Contentlayer](https://contentlayer.dev/), a processor that transforms content into type-safe JSON sources. In the scope of this blog, Contentlayer processes the local MDX files into typed JSON files. The benefits of using Contentlayer for a blog is that it ensures consistency for my content. Even though Contentlayer is a relatively new product, I'm a firm believer in [T3's Axioms](https://github.com/t3-oss/create-t3-app):
+
+1. Bleed Responsibly
+2. Typesafety Isn't Optional
+
+For me, Contentlayer satisfies both of these axioms and provides an extra level of comfort for the developer experience.
+
+### Downside Of Contentlayer
+
+Despite Contentlayer being a great addition thus far, my biggest issue with it is the support for remote sources on Windows. Since the feature is still experimental, possibly breaking changes are expected in the future. Moreover, the official GitHub examples only provide code that work on UNIX-based operating systems. For example, bash commands are used to sync content from a Git repository, but bash commands can't run on Windows (without experimental operating settings enabled).
+
+```javascript title="contentlayer.config.ts" caption="Sync GitHub content using bash commands"
+const syncContentFromGit = async(contentDir: string) => {
+   const syncRun = async () => {
+      const gitUrl = `https://${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_USER}/${process.env.REPO_NAME}.git`
+      await runBashCommand(`
+         if [ -d  "${contentDir}" ];
+         then
+            cd "${contentDir}"; git pull;
+         else
+            git clone --depth 1 --single-branch ${gitUrl} ${contentDir};
+         fi
+      `)
+   }
+// ...
+}
+
+```
+
+To address this, I hacked together a function that utilizes Node's internal `fs{:.module}` package to achieve the same functionality:
+
+```javascript title="contentlayer.config.ts" caption="Sync GitHub content using Node's fs module"
+const syncContentFromGit = async(contentDir: string) => {
+   const syncRun = async () => {
+      const gitUrl = `https://${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_USER}/${process.env.REPO_NAME}.git`
+      const isDirExists = await exists("blog-posts")
+
+      try {
+         if (isDirExists) {
+            await runBashCommand(`cd "${contentDir}" && git pull`)
+         } else {
+            await runBashCommand(
+               `git clone --depth 1 --single-branch ${gitUrl} ${contentDir}`
+            )
+         }
+         await syncImages()
+      } catch (e) {
+         console.error(e)
+      }
+   }
+// ...
+}
+```
+
+## MDX caveats
+
+Another issue I encountered was that almost every MDX component was wrapped in my `<p {...props}>{children}</p>{:typescript}` component. Although this wasn't a huge issue, it became annoying since styles were occasionally overwritten. To address this, I added CSS rules that targeted specific nesting patterns:
+
+```css title="globals.css"
+/* ... */
+
+.mdx-blockquote div {
+   @apply !m-0;
+}
+
+.footnotes #footnote-label {
+   @apply text-lg font-semibold text-neutral-100;
+}
+
+.footnotes li div {
+   @apply inline-block;
+}
+
+/* ... */
+```
+
+<Gap />
+
+# Recap
+
+All in all, it was fun building this blog and learning how to use MDX, Markdown, and the Next.js App Router. The blog isn't at its final state yet as there are still many improvements to make, but I'm excited to say that the first iteration is complete.
+
+If you're interested in checking out the code for this blog, it's available on [Github](https://github.com/tot/tonytran.me).

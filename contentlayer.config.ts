@@ -115,7 +115,7 @@ const syncContentFromGit = async (contentDir: string) => {
 
 export default makeSource({
    syncFiles: syncContentFromGit,
-   contentDirPath: `${process.env.REPO_NAME as string}/published`,
+   contentDirPath: `posts/published`,
    documentTypes: [Post],
    disableImportAliasWarning: true,
    mdx: {

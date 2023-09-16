@@ -39,3 +39,4 @@ next-env.d.ts
 
 # public content
 public/assets/blog
+blog-posts
