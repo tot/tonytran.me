@@ -17,6 +17,8 @@ import {
    strong,
 } from "@/app/components/mdx"
 import gap from "@/app/components/mdx/gap"
+import { ResolvingMetadata, Metadata } from "next"
+import _ from "lodash"
 
 export async function generateStaticParams() {
    return allPosts.map((post) => ({
@@ -38,6 +40,19 @@ const articleComponents = {
    strong,
    li,
    Gap: gap,
+}
+
+interface MetaDataProps {
+   params: { slug: string }
+}
+
+export async function generateMetadata(
+   { params }: MetaDataProps,
+   parent: ResolvingMetadata
+): Promise<Metadata> {
+   return {
+      title: "Tony Tran | " + _.startCase(params.slug),
+   }
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
