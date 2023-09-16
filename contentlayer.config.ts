@@ -115,7 +115,7 @@ const syncContentFromGit = async (contentDir: string) => {
 
 export default makeSource({
    syncFiles: syncContentFromGit,
-   contentDirPath: `posts/published`,
+   contentDirPath: `posts`,
    documentTypes: [Post],
    disableImportAliasWarning: true,
    mdx: {
