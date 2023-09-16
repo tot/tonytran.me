@@ -16,6 +16,7 @@ import {
    hr,
    strong,
 } from "@/app/components/mdx"
+import gap from "@/app/components/mdx/gap"
 
 export async function generateStaticParams() {
    return allPosts.map((post) => ({
@@ -36,6 +37,7 @@ const articleComponents = {
    hr,
    strong,
    li,
+   Gap: gap,
 }
 
 export default function Page({ params }: { params: { slug: string } }) {

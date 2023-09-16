@@ -20,7 +20,7 @@ const Article = ({
 }: ArticleProps) => {
    return (
       <>
-         <NextSeo title={title} description={description} />
+         {/* <NextSeo title={title} description={description} /> */}
 
          <div className="pt-8 md:pt-24 lg:pt-0">
             <div className="pb-4">

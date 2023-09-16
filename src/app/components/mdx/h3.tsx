@@ -5,7 +5,7 @@ const h3 = (props: HTMLProps<HTMLParagraphElement>) => {
    return (
       <div
          className={cn(
-            "py-2 font-sans text-lg font-semibold text-neutral-100 md:text-xl",
+            "pt-4 font-sans text-lg font-semibold text-neutral-100 md:text-xl",
             props.className
          )}
          {...props}
