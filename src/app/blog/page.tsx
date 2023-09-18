@@ -13,7 +13,7 @@ export default function Blog() {
             <h1 className="font-general-sans text-3xl font-bold text-neutral-100">
                Blog
             </h1>
-            <p className="mt-2 font-sans text-base leading-7 text-neutral-400">
+            <p className="mt-2 font-sans text-base leading-6 text-neutral-400">
                Explore the world from my shoes. Read about my journey through
                project development, technology exploration, and personal
                reflections.

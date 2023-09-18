@@ -51,10 +51,10 @@ const ProjectCard = ({
                <time className={cn("font-sans text-sm font-medium", dateColor)}>
                   {year}
                </time>
-               <p className="mt-2 font-general-sans text-lg font-medium leading-8 tracking-wide text-neutral-100">
+               <p className="mt-2 font-general-sans text-base font-medium leading-6 tracking-wide text-neutral-100">
                   {title}
                </p>
-               <p className="font-sans text-base leading-6 text-neutral-400">
+               <p className="font-sans text-sm text-neutral-400">
                   {description}
                </p>
             </div>
