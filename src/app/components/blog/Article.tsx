@@ -22,9 +22,9 @@ const Article = ({
       <>
          {/* <NextSeo title={title} description={description} /> */}
 
-         <div className="pt-8 md:pt-24 lg:pt-0">
+         <div className="pt-4 md:pt-10">
             <div className="pb-4">
-               <h1 className="max-w-prose font-general-sans text-3xl font-semibold !leading-[3rem] tracking-wide text-neutral-100 md:text-4xl">
+               <h1 className="max-w-prose font-general-sans text-3xl font-semibold tracking-wide text-neutral-100 md:!leading-[3rem]">
                   {title}
                </h1>
                <div className="flex items-center space-x-2 pt-4 font-sans text-sm font-medium text-neutral-400/80">
@@ -40,9 +40,9 @@ const Article = ({
                   </div>
                </div>
             </div>
-            {/* <div className="pb-6 pt-8">
-            <div className="h-px w-full bg-neutral-700/50" />
-         </div> */}
+            <div className="pb-8 pt-4">
+               <div className="h-px w-full bg-neutral-700/50" />
+            </div>
             <article className="prose mb-8 max-w-prose font-sans">
                {children}
             </article>

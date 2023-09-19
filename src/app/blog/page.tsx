@@ -9,8 +9,8 @@ export default function Blog() {
 
    return (
       <main className="mx-auto w-full">
-         <section className="pt-8 md:pt-24 lg:pt-0">
-            <h1 className="font-general-sans text-3xl font-bold text-neutral-100">
+         <section className="pt-4 md:pt-10">
+            <h1 className="font-general-sans text-3xl font-semibold text-neutral-100">
                Blog
             </h1>
             <p className="mt-2 font-sans text-base leading-6 text-neutral-400">

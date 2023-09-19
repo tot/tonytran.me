@@ -10,7 +10,7 @@ const Heading = ({ children, className }: HeadingProps) => {
    return (
       <h1
          className={cn(
-            "font-general-sans text-2xl font-bold tracking-wide text-neutral-100",
+            "font-general-sans text-2xl font-semibold tracking-wide text-neutral-100",
             className
          )}
       >

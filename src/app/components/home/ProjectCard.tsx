@@ -27,8 +27,8 @@ const ProjectCard = ({
       <motion.a
          href={url}
          target="_blank"
-         whileTap={{ scale: 0.95 }}
-         whileHover={{ scale: 1.05 }}
+         whileTap={{ scale: 0.97 }}
+         whileHover={{ scale: 1.03 }}
       >
          <div
             className={cn(

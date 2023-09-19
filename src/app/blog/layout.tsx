@@ -7,7 +7,7 @@ interface BlogLayoutProps {
 
 export default function BlogLayout({ children }: BlogLayoutProps) {
    return (
-      <div className="mx-auto flex min-h-screen w-full max-w-[50rem] flex-col justify-between px-6 lg:pb-0 lg:pt-32">
+      <div className="mx-auto flex min-h-screen w-full max-w-[50rem] flex-col justify-between px-6 lg:pb-0">
          <div>{children}</div>
          <div className="">
             <Footer />

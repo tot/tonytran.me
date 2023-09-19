@@ -15,7 +15,7 @@ const AllPostsButton = () => {
                type="button"
                onMouseEnter={() => setHover(true)}
                onMouseLeave={() => setHover(false)}
-               whileTap={{ scale: 0.9 }}
+               whileTap={{ scale: 0.95 }}
             >
                <span className="text-sm font-medium">All posts</span>
                <motion.div animate={{ x: isHover ? 4 : 0 }}>

@@ -24,6 +24,9 @@ const config: Config = {
          aspectRatio: {
             "blog-image": "16 / 9",
          },
+         colors: {
+            "teal-accent": "#62fde8",
+         },
       },
    },
    plugins: [],
