@@ -1,11 +1,9 @@
 import { format, parseISO } from "date-fns"
 import { ReactNode } from "react"
-import { NextSeo } from "next-seo"
 import { BiCalendarAlt, BiTime } from "react-icons/bi"
 
 interface ArticleProps {
    title: string
-   description: string
    publishedDate: string
    readingTime: string
    children: ReactNode
@@ -13,15 +11,12 @@ interface ArticleProps {
 
 const Article = ({
    title,
-   description,
    publishedDate,
    readingTime,
    children,
 }: ArticleProps) => {
    return (
       <>
-         {/* <NextSeo title={title} description={description} /> */}
-
          <div className="pt-4 md:pt-10">
             <div className="pb-4">
                <h1 className="max-w-prose font-general-sans text-3xl font-semibold tracking-wide text-neutral-100 md:!leading-[3rem]">
