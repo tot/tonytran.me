@@ -25,29 +25,27 @@ const ArticleCard = ({
    const [isHover, setHover] = useCycle(false, true)
 
    return (
-      <motion.div
-         whileTap={{ scale: 0.95 }}
-         onHoverStart={() => setHover()}
-         onHoverEnd={() => setHover()}
-      >
+      <motion.div onHoverStart={() => setHover()} onHoverEnd={() => setHover()}>
          <Link href={url} className="">
-            <div className="relative w-full rounded-lg font-sans">
-               <AnimatePresence>
-                  {isHover && (
-                     <motion.div
-                        className="absolute -z-10 h-full w-full rounded-lg bg-neutral-700/30"
-                        initial={{ scale: 0.85, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.85, opacity: 0 }}
-                     />
-                  )}
-               </AnimatePresence>
-               <div className="p-4">
+            <div className="group relative w-full font-sans">
+               <div className="">
                   <div className="">
-                     <h2 className="font-general-sans text-xl font-semibold leading-8 tracking-wide text-neutral-100">
-                        {title}
-                     </h2>
-                     <p className="pt-1 font-sans text-base leading-6 text-neutral-400">
+                     <div className="relative w-fit">
+                        <h2 className="font-general-sans text-lg font-medium leading-8 tracking-wide text-neutral-200">
+                           {title}
+                        </h2>
+                        <AnimatePresence>
+                           {isHover && (
+                              <motion.div
+                                 className="absolute bottom-0 left-0 h-px w-full bg-neutral-100"
+                                 initial={{ width: 0 }}
+                                 animate={{ width: "100%" }}
+                                 exit={{ width: 0 }}
+                              />
+                           )}
+                        </AnimatePresence>
+                     </div>
+                     <p className="pt-1 font-sans text-sm leading-6 text-neutral-400">
                         {description}
                      </p>
                   </div>
