@@ -2,7 +2,7 @@
 
 import { formatDate } from "@utils/utils"
 import { parseISO } from "date-fns"
-import { AnimatePresence, motion, useCycle } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import Link from "next/link"
 import { BiCalendarAlt, BiTime } from "react-icons/bi"
 
@@ -22,28 +22,17 @@ const ArticleCard = ({
    readingTime,
 }: ArticleCardProps) => {
    const date = parseISO(publishedDate)
-   const [isHover, setHover] = useCycle(false, true)
 
    return (
-      <motion.div onHoverStart={() => setHover()} onHoverEnd={() => setHover()}>
+      <motion.div>
          <Link href={url} className="">
-            <div className="group relative w-full font-sans">
+            <div className="underline-link-group relative w-full font-sans">
                <div className="">
                   <div className="">
                      <div className="relative w-fit">
-                        <h2 className="font-general-sans text-lg font-medium leading-8 tracking-wide text-neutral-200">
+                        <h2 className="underline-link font-general-sans text-lg font-medium leading-8 tracking-wide text-neutral-100">
                            {title}
                         </h2>
-                        <AnimatePresence>
-                           {isHover && (
-                              <motion.div
-                                 className="absolute bottom-0 left-0 h-px w-full bg-neutral-100"
-                                 initial={{ width: 0 }}
-                                 animate={{ width: "100%" }}
-                                 exit={{ width: 0 }}
-                              />
-                           )}
-                        </AnimatePresence>
                      </div>
                      <p className="pt-1 font-sans text-sm leading-6 text-neutral-400">
                         {description}

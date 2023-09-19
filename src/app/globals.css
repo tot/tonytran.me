@@ -156,3 +156,17 @@ span[data-rehype-pretty-code-fragment] code {
 .footnotes li div {
    @apply inline-block;
 }
+
+.underline-link {
+   text-decoration: none;
+   background-image: linear-gradient(currentColor, currentColor);
+   background-position: 0% 100%;
+   background-repeat: no-repeat;
+   background-size: 0% 2px;
+   transition: background-size 0.3s;
+}
+
+.underline-link-group:hover .underline-link,
+.underline-link:focus {
+   background-size: 100% 2px;
+}

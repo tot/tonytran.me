@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import Link from "../mdx/a"
 import { ReactNode, useEffect, useState } from "react"
 import TextTransition, { presets } from "react-text-transition"
 
@@ -11,7 +11,7 @@ interface HighlightProps {
 }
 
 const Highlight = ({ children }: HighlightProps) => {
-   return <span className="text-teal-accent">{children}</span>
+   return <span className="font-medium text-neutral-200 ">{children}</span>
 }
 
 const Intro = () => {
@@ -37,7 +37,7 @@ const Intro = () => {
                <div className="">
                   I&apos;m{" "}
                   <TextTransition
-                     className="text-teal-accent z-20"
+                     className="z-20 font-medium text-neutral-200"
                      inline
                      springConfig={presets.gentle}
                   >
@@ -52,8 +52,10 @@ const Intro = () => {
 
                <p className="">
                   Check out my{" "}
-                  <Link href="/blog" className="text-neutral-100 underline">
-                     blog
+                  <Link href="/blog">
+                     <span className="hover:text-teal-accent text-neutral-200">
+                        blog
+                     </span>
                   </Link>{" "}
                   where I detail my experiences building projects, share
                   insights about technologies, and jot down thoughts.
