@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "../mdx/a"
+import Link from "next/link"
 import { ReactNode, useEffect, useState } from "react"
 import TextTransition, { presets } from "react-text-transition"
 
@@ -53,7 +53,7 @@ const Intro = () => {
                <p className="">
                   Check out my{" "}
                   <Link href="/blog">
-                     <span className="hover:text-teal-accent text-neutral-200">
+                     <span className="font-medium text-neutral-200 underline underline-offset-2 transition-colors duration-150 hover:text-teal-accent hover:decoration-[#62fde8] focus:bg-teal-accent/10">
                         blog
                      </span>
                   </Link>{" "}
