@@ -2,9 +2,23 @@
 
 import Link from "next/link"
 import { ReactNode, useEffect, useState } from "react"
+import { BiLogoLinkedin, BiLogoGithub } from "react-icons/bi"
 import TextTransition, { presets } from "react-text-transition"
 
 const TITLES = ["a developer", "a designer", "an entrepreneur"]
+
+const LINKS = [
+   {
+      icon: <BiLogoLinkedin className="text-lg" />,
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/tony-tran03/",
+   },
+   {
+      icon: <BiLogoGithub className="text-lg" />,
+      name: "GitHub",
+      url: "https://github.com/tot",
+   },
+]
 
 interface HighlightProps {
    children?: ReactNode
@@ -50,16 +64,24 @@ const Intro = () => {
                   <Highlight>software automation</Highlight> spaces.
                </div>
 
-               <p className="">
-                  Check out my{" "}
-                  <Link href="/blog">
-                     <span className="font-medium text-neutral-200 underline underline-offset-2 transition-colors duration-150 hover:text-teal-accent hover:decoration-[#62fde8] focus:bg-teal-accent/10">
-                        blog
-                     </span>
-                  </Link>{" "}
-                  where I detail my experiences building projects, share
-                  insights about technologies, and jot down thoughts.
-               </p>
+               <div className="">
+                  <p className="pb-2">Find me on</p>
+                  <ul className="flex items-center space-x-4 text-xl">
+                     {LINKS.map(({ icon, name, url }) => (
+                        <Link href={url} key={name}>
+                           <li
+                              key={url}
+                              className="flex items-center space-x-2 text-neutral-200 underline decoration-neutral-500 underline-offset-4 transition-colors duration-150 hover:text-teal-accent hover:decoration-teal-accent"
+                           >
+                              {icon}
+                              <span className="text-base font-medium">
+                                 {name}
+                              </span>
+                           </li>
+                        </Link>
+                     ))}
+                  </ul>
+               </div>
             </div>
          </div>
       </section>
