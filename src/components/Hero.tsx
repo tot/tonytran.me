@@ -2,9 +2,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const titles = [
-	{ text: 'Founder', fontClass: 'font-departure' },
-	{ text: 'Software Engineer', fontClass: 'font-departure' },
-	{ text: 'Designer', fontClass: 'font-departure' },
+	{ text: 'Founder', fontClass: '' },
+	{ text: 'Software Engineer', fontClass: '' },
+	{ text: 'Designer', fontClass: '' },
 ];
 
 const Hero = () => {
@@ -61,8 +61,8 @@ const Hero = () => {
 
 	return (
 		<div className="">
-			<h1 className="text-3xl font-bold text-white mb-2 font-departure uppercase tracking-wide"># Tony Tran</h1>
-			<div className="h-8 relative font-medium overflow-hidden">
+			<h1 className="text-3xl font-bold text-white mb-2 font-departure uppercase tracking-wide">Tony Tran</h1>
+			<div className="h-8 relative font-medium uppercase font-departure overflow-hidden tracking-wide">
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={currentTitleIndex}
