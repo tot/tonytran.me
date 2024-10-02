@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/manrope';
+
 interface Props {
 	title: string;
 }
@@ -16,7 +18,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-grid">
 		<slot />
 	</body>
 </html>
@@ -47,4 +49,22 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
+
+	/* Register your custom font family and tell the browser where to find it. */
+	@font-face {
+	font-family: 'DepartureMonospace';
+	src: url('/fonts/DepartureMono-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+	}
+
+	/* .bg-grid {
+		background-color: rgb(19, 21, 26);
+		background-image: 
+			linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+		background-size: 20px 20px;
+		height: 100vh;
+	} */
 </style>
