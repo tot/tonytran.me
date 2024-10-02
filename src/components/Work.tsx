@@ -1,24 +1,41 @@
+import WorkCard from "./WorkCard";
+
 const Work = () => {
-	return (
-		<div className="space-y-8">
-			<h2 className="text-lg font-medium tracking-wide text-white mb-2 font-departure w-full"><span className="px-1">## Work Experience</span></h2>
-			<div className="grid grid-cols-12 gap-4">
-				<div className="col-span-4">
-					<p className="text-white/50 font-sans tracking-wider">
-						2024 - Present
-					</p>
-				</div>
-				<div className="col-span-8">
-					<p className="text-white font-sans font-medium tracking-wide">
-						Software Engineer
-					</p>
-					<p className="text-white/50">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien. Nulla facilisi.
-					</p>
-				</div>
-			</div>
-		</div>
-	)
-}
+  return (
+    <div className="">
+      <h2 className="text-lg font-medium text-white mb-2 font-departure uppercase tracking-wide w-full pb-4">
+        Work
+      </h2>
+      <WorkCard
+        title="Software Engineer Intern"
+        company="Investure"
+        date="May 2024 - Aug 2024"
+        description="Built interfaces and APIs using LLMs to summarize financial documents for analysts."
+        technologies={["FastAPI", "React", "ASP.NET", "MSSQL"]}
+        first={true}
+      />
+      <WorkCard
+        title="Frontend Engineer"
+        company="web3 startup"
+        date="Sep 2022 - May 2023"
+        description="Founding frontend engineer, built the first version of a crypto + NFT trading platform for retail investors."
+        technologies={[
+          "Next.js",
+          "React",
+          "TailwindCSS",
+          "TypeScript",
+          "WebSockets",
+        ]}
+      />
+      <WorkCard
+        title="Frontend Developer"
+        company="freelance"
+        date="Oct 2018 - Present"
+        description="Operating a digital agency with 12+ startup clients. Focusing on building high conversion websites and web apps that grow revenue."
+        technologies={["React", "TailwindCSS", "Node.js", "Next.js"]}
+      />
+    </div>
+  );
+};
 
 export default Work;

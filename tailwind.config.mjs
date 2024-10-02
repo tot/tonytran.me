@@ -5,7 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				departure: ['DepartureMonospace', 'monospace'],
-				sans: ['Manrope Variable', 'sans-serif'],
+				sans: ['Ubuntu', 'sans-serif'],
 			},
 		},
 	},
