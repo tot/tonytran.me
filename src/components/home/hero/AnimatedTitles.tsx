@@ -6,7 +6,7 @@ const titles = ["Founder", "Software Engineer", "Designer"];
 const glyphs =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
 
-const Hero = () => {
+const AnimatedTitles = () => {
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
     useEffect(() => {
@@ -20,37 +20,32 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="">
-            <h1 className="text-3xl font-bold text-white mb-2 font-departure uppercase tracking-wide">
-                Tony Tran
-            </h1>
-            <div className="h-8 relative overflow-hidden">
-                <AnimatePresence initial={false}>
-                    <motion.div
-                        key={currentTitleIndex}
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -20, opacity: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="text-base font-departure text-white/50 absolute w-full py-1"
-                    >
-                        {titles[currentTitleIndex]
-                            .split("")
-                            .map((letter, index) => (
-                                <span key={index} className="inline-block">
-                                    {letter === " " ? (
-                                        "\u00A0"
-                                    ) : (
-                                        <GlitchText
-                                            finalLetter={letter}
-                                            delay={index * 50}
-                                        />
-                                    )}
-                                </span>
-                            ))}
-                    </motion.div>
-                </AnimatePresence>
-            </div>
+        <div className="h-8 flex items-center relative overflow-hidden">
+            <AnimatePresence initial={false}>
+                <motion.div
+                    key={currentTitleIndex}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-sm font-departure text-white/50 absolute w-full py-1"
+                >
+                    {titles[currentTitleIndex]
+                        .split("")
+                        .map((letter, index) => (
+                            <span key={index} className="inline-block">
+                                {letter === " " ? (
+                                    "\u00A0"
+                                ) : (
+                                    <GlitchText
+                                        finalLetter={letter}
+                                        delay={index * 50}
+                                    />
+                                )}
+                            </span>
+                        ))}
+                </motion.div>
+            </AnimatePresence>
         </div>
     );
 };
@@ -98,4 +93,4 @@ const GlitchText = ({ finalLetter, delay }: GlitchTextProps) => {
     return displayLetter;
 };
 
-export default Hero;
+export default AnimatedTitles;
