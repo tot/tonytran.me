@@ -1,0 +1,51 @@
+---
+import WorkCard from "../../home/work/WorkCard";
+import WorkIcon from "../../home/work/WorkIcon";
+
+const work = [
+    {
+        title: "Software Engineer Intern",
+        company: "Investure",
+        date: "May 2024 - Aug 2024",
+        description:
+            "Built interfaces and APIs using LLMs to summarize financial documents for analysts.",
+        technologies: ["FastAPI", "React", "ASP.NET", "MSSQL"],
+    },
+    {
+        title: "Frontend Engineer",
+        company: "web3 startup",
+        date: "Sep 2022 - May 2023",
+        description:
+            "Founding frontend engineer, built the first version of a crypto + NFT trading platform for retail investors.",
+        technologies: [
+            "Next.js",
+            "React",
+            "TailwindCSS",
+            "TypeScript",
+            "WebSockets",
+        ],
+    },
+    {
+        title: "Frontend Developer",
+        company: "freelance",
+        date: "Oct 2018 - Present",
+        description:
+            "Operating a digital agency focused on startups. Specialize in building high conversion websites and web apps that grow revenue.",
+        technologies: ["React", "TailwindCSS", "Node.js", "Next.js"],
+    },
+];
+---
+
+<div class="border-l border-t border-white/10 relative">
+    <div
+        class="absolute top-0 left-3 transform -translate-y-1/2 bg-[#121212] px-3"
+    >
+        <div class="flex items-center gap-2">
+            <WorkIcon />
+            <p class="text-[#8678ff] text-base font-departure tracking-wide">
+                work
+            </p>
+        </div>
+    </div>
+    {work.map((item) => <WorkCard {...item} />)}
+</div>
