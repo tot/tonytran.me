@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/manrope";
 import "@fontsource/ubuntu";
+import Navbar from "../components/Navbar.astro";
 
 interface Props {
     title: string;
@@ -20,6 +21,7 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg-grid">
+        <Navbar />
         <slot />
     </body>
 </html>
