@@ -14,6 +14,7 @@ export default {
                     backend: "#FCDE70",
                     fullstack: "#FF8C9E",
                 },
+                "corner-highlight": "#FF8343",
             },
         },
     },
