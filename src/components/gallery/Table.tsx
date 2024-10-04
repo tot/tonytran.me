@@ -8,9 +8,11 @@ import {
     useReactTable,
     type SortDirection,
 } from "@tanstack/react-table";
-import DesignIcon from "./DesignIcon";
-import DevelopedIcon from "./developed/DevelopedIcon";
+import DesignIcon from "./icons/DesignIcon";
+import DevelopedIcon from "./icons/DevelopedIcon";
 import { cn } from "../../lib/utils";
+import SortAscIcon from "./icons/SortAscIcon";
+import SortDescIcon from "./icons/SortDescIcon";
 
 type Project = {
     name: string;
@@ -84,14 +86,14 @@ const Table = () => {
                             <RowIcon
                                 type={info.row.original.type}
                                 className={cn(
-                                    "group-hover:text-black transition-all duration-100",
+                                    "group-hover:text-black transition-colors duration-100",
                                     RowTextColor(info.row.original.type),
                                 )}
                             />
                         </div>
                         <p
                             className={cn(
-                                "truncate max-w-96 text-ellipsis group-hover:text-black text-departure text-sm transition-all duration-100",
+                                "truncate max-w-96 text-ellipsis group-hover:text-black text-departure text-sm transition-colors duration-100",
                                 RowTextColor(info.row.original.type),
                             )}
                         >
@@ -153,8 +155,8 @@ const Table = () => {
                                                 header.getContext(),
                                             )}
                                             {{
-                                                asc: <p>up</p>,
-                                                desc: <p>down</p>,
+                                                asc: <SortAscIcon />,
+                                                desc: <SortDescIcon />,
                                             }[
                                                 header.column.getIsSorted() as SortDirection
                                             ] ?? null}
@@ -175,7 +177,7 @@ const Table = () => {
                         <tr
                             key={row.id}
                             className={cn(
-                                "w-full grid grid-cols-12 items-center gap-4 group font-departure transition-all duration-100",
+                                "w-full grid grid-cols-12 items-center gap-4 group font-departure transition-colors duration-100",
                                 RowBackgroundColor(row.original.type),
                                 {
                                     "bg-[#222222]": index % 2 === 0,
@@ -187,7 +189,7 @@ const Table = () => {
                                 <td
                                     key={cell.id}
                                     className={cn(
-                                        "group-hover:text-black tracking-wide text-sm transition-all duration-100",
+                                        "group-hover:text-black tracking-wide text-sm transition-colors duration-100",
                                         RowTextColor(cell.row.original.type),
                                         {
                                             "col-span-6":
