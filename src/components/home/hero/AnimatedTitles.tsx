@@ -28,7 +28,7 @@ const AnimatedTitles = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-sm font-departure text-white/50 absolute w-full py-1"
+                    className="text-sm font-departure text-white/60 absolute w-full py-1"
                 >
                     {titles[currentTitleIndex]
                         .split("")
