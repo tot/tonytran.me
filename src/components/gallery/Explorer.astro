@@ -1,0 +1,19 @@
+---
+import ExplorerIcon from "./ExplorerIcon";
+import Table from "./Table";
+---
+
+<div class="p-6 border border-white/10 relative">
+    <div
+        class="absolute top-0 left-3 transform -translate-y-1/2 bg-[#121212] px-3"
+    >
+        <div class="flex items-center gap-2">
+            <ExplorerIcon />
+            <p class="text-white text-base font-departure tracking-wide">
+                gallery
+            </p>
+        </div>
+    </div>
+
+    <Table client:load />
+</div>
