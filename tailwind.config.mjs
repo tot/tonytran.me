@@ -5,7 +5,7 @@ export default {
         extend: {
             fontFamily: {
                 departure: ["DepartureMonospace", "monospace"],
-                sans: ["Ubuntu", "sans-serif"],
+                sans: ["Inter", "sans-serif"],
             },
             colors: {
                 row: {
