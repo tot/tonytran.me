@@ -5,6 +5,10 @@ import Explorer from "../components/gallery/Explorer.astro";
 // import Hero from "../components/gallery/Hero.astro";
 // import Designs from "../components/gallery/designs/Designs.tsx";
 // import Developed from "../components/gallery/developed/Developed";
+import { getCollection } from "astro:content";
+import type { GalleryCollection } from "../types/project";
+
+const projects = await getCollection("gallery");
 ---
 
 <Layout title="Tony Tran - Gallery">
@@ -13,5 +17,14 @@ import Explorer from "../components/gallery/Explorer.astro";
         <Explorer />
         <!-- <Developed />
         <Designs /> -->
+        <button onclick="console.log(projects)">test</button>
+        {
+            projects.map((project: GalleryCollection) => (
+                <div class="bg-white">
+                    <h2>{project.title}</h2>
+                    <p>{project.description}</p>
+                </div>
+            ))
+        }
     </main>
 </Layout>
