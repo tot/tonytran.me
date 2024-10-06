@@ -1,19 +1,34 @@
+---
+const links = [
+    {
+        href: "/blog",
+        label: "blog",
+    },
+    {
+        href: "/gallery",
+        label: "gallery",
+    },
+];
+---
+
 <nav class="pt-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans">
     <div class="flex justify-between items-center">
-        <a href="/" class="text-white text-base font-departure tracking-wide"
+        <a
+            href="/"
+            class="text-white text-base font-departure tracking-wide font-bold"
             >Tt</a
         >
-        <div class="flex items-center gap-6">
-            <a
-                href="/blog"
-                class="text-white hover:bg-[#FF8A8A] hover:text-black text-base font-departure tracking-wide"
-                >/blog</a
-            >
-            <a
-                href="/gallery"
-                class="text-white hover:bg-[#FF8A8A] hover:text-black text-base font-departure tracking-wide"
-                >/gallery</a
-            >
+        <div class="flex items-center gap-6 font-departure">
+            {
+                links.map((link) => (
+                    <a
+                        href={link.href}
+                        class="text-white hover:bg-[#FF8A8A] hover:text-black text-sm tracking-wide"
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
         </div>
     </div>
 </nav>

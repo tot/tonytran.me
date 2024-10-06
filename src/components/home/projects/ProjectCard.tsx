@@ -16,15 +16,12 @@ const ProjectCard = ({ title, description, year, href }: ProjectCardProps) => {
                 <div className="space-y-2 w-full">
                     <div className="w-full flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
                         <div className="flex flex-nowrap items-center gap-3">
-                            <h3 className="text-base group-hover:bg-[#4de272] transition-all duration-100 group-hover:text-black font-medium flex items-center gap-2 underline underline-offset-2 text-white font-departure tracking-wide">
+                            <h3 className="text-base group-hover:bg-[#4de272] transition-all duration-100 group-hover:text-black font-medium flex items-center gap-2 text-white font-departure tracking-wide">
                                 {title}
-                                {/* <span className="inline-block flex-shrink-0">
-                                    <OpenLinkIcon />
-                                </span> */}
                             </h3>
                         </div>
                         <DotLine className="flex-shrink-0" />
-                        <p className="text-white/60 text-sm font-departure text-left md:text-right">
+                        <p className="text-white/60 text-sm font-sans text-left md:text-right">
                             {year}
                         </p>
                     </div>

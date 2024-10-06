@@ -18,13 +18,15 @@ console.log(projects);
         <Explorer />
         <!-- <Developed />
         <Designs /> -->
-        <button onclick="console.log(projects)">test</button>
+
         {
             projects.map((project: ProjectCollection) => (
-                <div class="bg-white">
-                    <h2>{project.data.title}</h2>
-                    <p>{project.data.description}</p>
-                </div>
+                <a href={`/gallery/${project.slug}`}>
+                    <div class="bg-white">
+                        <h2>{project.data.title}</h2>
+                        <p>{project.data.description}</p>
+                    </div>
+                </a>
             ))
         }
     </main>
