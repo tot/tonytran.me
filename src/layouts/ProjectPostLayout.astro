@@ -1,11 +1,13 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import "@fontsource/ubuntu";
 import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Navbar.astro";
 
 type Props = CollectionEntry<"projects">["data"];
 
-const { title, description, publishDate, draft, updatedDate } = Astro.props;
+const { title, description, publishDate, type, draft, updatedDate } =
+    Astro.props;
 ---
 
 <html lang="en">
@@ -18,13 +20,51 @@ const { title, description, publishDate, draft, updatedDate } = Astro.props;
         <main>
             <article>
                 <div>
-                    <div class="title">
-                        <h1>{title}</h1>
-                        <hr />
-                    </div>
-                    <slot />
+                    <main
+                        class="py-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans"
+                    >
+                        <div class="space-y-2">
+                            <h1 class="text-white font-sans text-2xl font-bold">
+                                {title}
+                            </h1>
+                            <p class="font-sans text-gray-400">
+                                {publishDate.toLocaleDateString()}
+                            </p>
+                            <p class="font-sans text-gray-400">
+                                {type}
+                            </p>
+                        </div>
+                        <slot />
+                    </main>
                 </div>
             </article>
         </main>
     </body>
 </html>
+<style is:global>
+    html {
+        font-family: system-ui, sans-serif;
+        background: #121212;
+        box-sizing: border-box;
+    }
+    code {
+        font-family:
+            Menlo,
+            Monaco,
+            Lucida Console,
+            Liberation Mono,
+            DejaVu Sans Mono,
+            Bitstream Vera Sans Mono,
+            Courier New,
+            monospace;
+    }
+
+    /* Register your custom font family and tell the browser where to find it. */
+    @font-face {
+        font-family: "DepartureMonospace";
+        src: url("/fonts/DepartureMono-Regular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+</style>
