@@ -3,11 +3,16 @@ import type { CollectionEntry } from "astro:content";
 import "@fontsource/ubuntu";
 import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Navbar.astro";
+import dayjs from "dayjs";
+import { Clock } from "@phosphor-icons/react";
+import ProjectTypeIcon from "../components/gallery/ProjectTypeIcon";
+import "yet-another-react-lightbox/styles.css";
 
 type Props = CollectionEntry<"projects">["data"];
 
-const { title, description, publishDate, type, draft, updatedDate } =
-    Astro.props;
+const { title, description, publishDate, type } = Astro.props;
+
+const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
 ---
 
 <html lang="en">
@@ -17,26 +22,35 @@ const { title, description, publishDate, type, draft, updatedDate } =
 
     <body>
         <Navbar />
-        <main>
+        <main class="py-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans">
             <article>
-                <div>
-                    <main
-                        class="py-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans"
-                    >
-                        <div class="space-y-2">
-                            <h1 class="text-white font-sans text-2xl font-bold">
-                                {title}
-                            </h1>
-                            <p class="font-sans text-gray-400">
-                                {publishDate.toLocaleDateString()}
-                            </p>
+                <div class="flex flex-col gap-4 py-12">
+                    <h1 class="text-white font-sans text-5xl font-bold">
+                        {title}
+                    </h1>
+                    <div class="flex items-center gap-8">
+                        <div
+                            class="flex items-center gap-2 text-base font-medium"
+                        >
+                            <Clock size={20} className="text-gray-400" />
+                            <time class="font-sans text-gray-400">
+                                {formattedDate}
+                            </time>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-base font-medium"
+                        >
+                            <ProjectTypeIcon
+                                type={type}
+                                className="text-gray-400"
+                            />
                             <p class="font-sans text-gray-400">
                                 {type}
                             </p>
                         </div>
-                        <slot />
-                    </main>
+                    </div>
                 </div>
+                <slot />
             </article>
         </main>
     </body>
@@ -46,6 +60,7 @@ const { title, description, publishDate, type, draft, updatedDate } =
         font-family: system-ui, sans-serif;
         background: #121212;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
     code {
         font-family:
@@ -57,6 +72,14 @@ const { title, description, publishDate, type, draft, updatedDate } =
             Bitstream Vera Sans Mono,
             Courier New,
             monospace;
+    }
+
+    span.icon-link::before {
+        content: "#";
+        font-size: 0.8em;
+        margin-left: 10px;
+        text-decoration: none !important;
+        color: red;
     }
 
     /* Register your custom font family and tell the browser where to find it. */
