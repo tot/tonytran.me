@@ -6,5 +6,5 @@ export const projectSchema = z.object({
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(true),
-    type: z.enum(["frontend", "backend", "fullstack", "design"]),
+    type: z.enum(["Frontend", "Backend", "Fullstack", "Design"]),
 });
