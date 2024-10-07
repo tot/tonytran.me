@@ -1,0 +1,12 @@
+---
+const props = Astro.props;
+---
+
+<a
+    {...props}
+    class="group inline-flex items-start underline underline-offset-2 transition-colors duration-150 hover:decoration-blue-500 focus:decoration-blue-500"
+>
+    <span class="transition-colors duration-150 group-hover:text-blue-500">
+        <slot />
+    </span>
+</a>

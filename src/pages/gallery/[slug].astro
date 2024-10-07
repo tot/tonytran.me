@@ -1,6 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 import ProjectPostLayout from "../../layouts/ProjectPostLayout.astro";
+import Heading1 from "../../components/mdx/Heading1.astro";
+import Heading2 from "../../components/mdx/Heading2.astro";
+import Heading3 from "../../components/mdx/Heading3.astro";
+import Link from "../../components/mdx/Link.astro";
+import BlockQuote from "../../components/mdx/BlockQuote.astro";
+import Gap from "../../components/mdx/Gap.astro";
+import Bold from "../../components/mdx/Bold.astro";
+import HorizontalDivider from "../../components/mdx/HorizontalDivider.astro";
+import ListItem from "../../components/mdx/ListItem.astro";
+import OrderedList from "../../components/mdx/OrderedList.astro";
+import UnorderedList from "../../components/mdx/UnorderedList.astro";
+import Paragraph from "../../components/mdx/Paragraph.astro";
 
 export async function getStaticPaths() {
     const galleryEntries = await getCollection("projects");
@@ -11,8 +23,21 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const components = {
+    h1: Heading1,
+    h2: Heading2,
+    h3: Heading3,
+    a: Link,
+    p: Paragraph,
+    ul: UnorderedList,
+    ol: OrderedList,
+    li: ListItem,
+    blockquote: BlockQuote,
+    hr: HorizontalDivider,
+    Gap,
+};
 ---
 
 <ProjectPostLayout {...entry.data}>
-    <Content />
+    <Content images={images} components={components} />
 </ProjectPostLayout>

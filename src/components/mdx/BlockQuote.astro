@@ -1,0 +1,11 @@
+---
+const props = Astro.props;
+---
+
+<div {...props} class="py-2">
+    <blockquote
+        class="border-l-4 border-indigo-700 px-8 py-4 font-serif font-medium"
+    >
+        <slot />
+    </blockquote>
+</div>

@@ -1,0 +1,8 @@
+---
+const props = Astro.props;
+---
+
+<div {...props} class="pt-4 font-sans text-2xl font-bold text-neutral-100">
+    <slot />
+    <p class="text-white">da{props.id}</p>
+</div>
