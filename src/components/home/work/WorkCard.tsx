@@ -26,7 +26,7 @@ const WorkCard = ({
             </div>
             <div className={`col-span-12 md:col-span-8`}>
                 <div className={cn("space-y-2")}>
-                    <p className="text-white font-departure font-medium tracking-wide">
+                    <p className="text-white font-sans font-medium tracking-wide">
                         {title} &mdash; {company}
                     </p>
                     <p className="text-white/60 text-sm leading-6">

@@ -2,9 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Explorer from "../../components/gallery/Explorer.astro";
-// import Hero from "../components/gallery/Hero.astro";
-// import Designs from "../components/gallery/designs/Designs.tsx";
-// import Developed from "../components/gallery/developed/Developed";
 import { getCollection } from "astro:content";
 import type { ProjectCollection } from "../../types/project";
 
@@ -14,10 +11,7 @@ console.log(projects);
 
 <Layout title="Tony Tran - Gallery">
     <main class="py-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans">
-        <!-- <Hero /> -->
         <Explorer />
-        <!-- <Developed />
-        <Designs /> -->
 
         {
             projects.map((project: ProjectCollection) => (

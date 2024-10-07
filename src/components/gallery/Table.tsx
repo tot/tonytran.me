@@ -10,10 +10,13 @@ import {
 } from "@tanstack/react-table";
 import DesignIcon from "./icons/DesignIcon";
 import DevelopedIcon from "./icons/DevelopedIcon";
+import {
+    BracketsCurly,
+    PenNib,
+    SortAscending,
+    SortDescending,
+} from "@phosphor-icons/react";
 import { cn } from "../../lib/utils";
-import SortAscIcon from "./icons/SortAscIcon";
-import SortDescIcon from "./icons/SortDescIcon";
-
 type Project = {
     name: string;
     date: string;
@@ -35,26 +38,26 @@ interface RowIconProps {
 const RowIcon = ({ type, className }: RowIconProps) => {
     switch (type) {
         case "Design":
-            return <DesignIcon className={className} />;
+            return <PenNib size={20} className={className} />;
         case "Frontend":
-            return <DevelopedIcon className={className} />;
+            return <BracketsCurly size={20} className={className} />;
         case "Backend":
-            return <DevelopedIcon className={className} />;
+            return <BracketsCurly size={20} className={className} />;
         case "Fullstack":
-            return <DevelopedIcon className={className} />;
+            return <BracketsCurly size={20} className={className} />;
     }
 };
 
 const RowBackgroundColor = (type: Project["type"]) => {
     switch (type) {
         case "Design":
-            return "hover:bg-row-design";
+            return "hover:bg-row-design/10";
         case "Frontend":
-            return "hover:bg-row-frontend";
+            return "hover:bg-row-frontend/10";
         case "Backend":
-            return "hover:bg-row-backend";
+            return "hover:bg-row-backend/10";
         case "Fullstack":
-            return "hover:bg-row-fullstack";
+            return "hover:bg-row-fullstack/10";
     }
 };
 
@@ -86,14 +89,14 @@ const Table = () => {
                             <RowIcon
                                 type={info.row.original.type}
                                 className={cn(
-                                    "group-hover:text-black transition-colors duration-100",
+                                    "transition-colors duration-100",
                                     RowTextColor(info.row.original.type),
                                 )}
                             />
                         </div>
                         <p
                             className={cn(
-                                "truncate max-w-96 text-ellipsis group-hover:text-black text-departure text-sm transition-colors duration-100",
+                                "truncate max-w-96 text-ellipsis font-sans text-sm transition-colors duration-100",
                                 RowTextColor(info.row.original.type),
                             )}
                         >
@@ -134,7 +137,7 @@ const Table = () => {
                     {table.getHeaderGroups().map((headerGroup) => (
                         <tr
                             key={headerGroup.id}
-                            className="grid grid-cols-12 gap-4 font-departure border-b border-white/10 pb-2 select-none"
+                            className="grid grid-cols-12 gap-4 font-sans border-b border-white/10 pb-2 select-none"
                         >
                             {headerGroup.headers.map((header) => (
                                 <th
@@ -147,7 +150,7 @@ const Table = () => {
                                 >
                                     {header.column.getCanSort() ? (
                                         <div
-                                            className={`flex items-center gap-1 text-white/60 tracking-wide text-sm cursor-pointer hover:text-white`}
+                                            className={`flex items-center gap-1 text-white/60 tracking-wide text-sm font-medium cursor-pointer hover:text-white`}
                                             onClick={header.column.getToggleSortingHandler()}
                                         >
                                             {flexRender(
@@ -155,8 +158,12 @@ const Table = () => {
                                                 header.getContext(),
                                             )}
                                             {{
-                                                asc: <SortAscIcon />,
-                                                desc: <SortDescIcon />,
+                                                asc: (
+                                                    <SortAscending size={20} />
+                                                ),
+                                                desc: (
+                                                    <SortDescending size={20} />
+                                                ),
                                             }[
                                                 header.column.getIsSorted() as SortDirection
                                             ] ?? null}
@@ -177,10 +184,10 @@ const Table = () => {
                         <tr
                             key={row.id}
                             className={cn(
-                                "w-full grid grid-cols-12 items-center gap-4 group font-departure transition-colors duration-100",
+                                "w-full grid grid-cols-12 items-center gap-4 group font-sans transition-colors duration-100",
                                 RowBackgroundColor(row.original.type),
                                 {
-                                    "bg-[#222222]": index % 2 === 0,
+                                    // "bg-[#222222]": index % 2 === 0,
                                     "mt-2": index === 0,
                                 },
                             )}
@@ -189,7 +196,7 @@ const Table = () => {
                                 <td
                                     key={cell.id}
                                     className={cn(
-                                        "group-hover:text-black tracking-wide text-sm transition-colors duration-100",
+                                        "tracking-wide text-sm transition-colors duration-100",
                                         RowTextColor(cell.row.original.type),
                                         {
                                             "col-span-6":

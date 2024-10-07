@@ -1,15 +1,17 @@
 ---
-import ExplorerIcon from "./icons/ExplorerIcon";
+import { Folder } from "@phosphor-icons/react";
 import Table from "./Table";
 ---
 
-<div class="p-6 border border-white/10 relative">
+<div class="p-6 border border-white/10 relative rounded-md">
     <div
         class="absolute top-0 left-3 transform -translate-y-1/2 bg-[#121212] px-3"
     >
         <div class="flex items-center gap-2">
-            <ExplorerIcon />
-            <p class="text-white text-base font-departure tracking-wide">
+            <Folder size={20} className="text-white" weight="bold" />
+            <p
+                class="text-white text-base font-sans font-semibold tracking-wide"
+            >
                 gallery
             </p>
         </div>

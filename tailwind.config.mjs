@@ -9,8 +9,8 @@ export default {
             },
             colors: {
                 row: {
-                    design: "#7695FF",
-                    frontend: "#46c7b4",
+                    design: "#08C2FF",
+                    frontend: "#73EC8B",
                     backend: "#FCDE70",
                     fullstack: "#FF8C9E",
                 },
