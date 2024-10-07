@@ -1,6 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import ProjectPostLayout from "../../layouts/ProjectPostLayout.astro";
+import { getProjectImages } from "../../modules/project";
+
+// MDX Components
 import Heading1 from "../../components/mdx/Heading1.astro";
 import Heading2 from "../../components/mdx/Heading2.astro";
 import Heading3 from "../../components/mdx/Heading3.astro";
@@ -23,6 +26,9 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const images = await getProjectImages(entry.slug);
+
 const components = {
     h1: Heading1,
     h2: Heading2,

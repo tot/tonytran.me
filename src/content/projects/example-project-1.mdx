@@ -1,10 +1,38 @@
 ---
-title: This is the second project
-description: Description of the second project
-publishDate: 2024-03-15
+title: This is the first project
+description: Description of the first project
+publishDate: 2024-03-01
 updatedDate: 2024-04-21
 slug: example-project-1
-type: fullstack
+type: Fullstack
 ---
 
-# This is the second project
+import { Image } from "astro:assets";
+import MdxImage from "../../components/mdx/MdxImage.astro";
+import { IMAGE_SIZES } from "../../constants/image";
+
+import TestImage from "../../content/projects/_images/example-project-1/image.jpg";
+
+# This is the first project
+
+## Screenshots
+
+Hello world so this is some epic stuff.
+
+Here I am writing a new line and some more things. Hopefully this works out well.
+
+> This is a quote
+
+Here I am using a [This is a link](https://www.google.com)
+
+{props.images.map((image, index) => (
+
+<MdxImage
+    key={index}
+    size="MDX_XXS"
+    src={image}
+    alt=""
+    caption="This is a test caption"
+    class="bg-blue-500 mx-auto"
+/>
+))}

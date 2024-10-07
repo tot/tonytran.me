@@ -1,0 +1,16 @@
+{
+    "images": [
+        {
+            "filename": "image.jpg",
+            "alt": "This is a test caption",
+            "caption": "This is a test caption",
+            "order": 1
+        },
+        {
+            "filename": "rave.jpg",
+            "alt": "This is a test caption",
+            "caption": "This is the rave image",
+            "order": 2
+        }
+    ]
+}
