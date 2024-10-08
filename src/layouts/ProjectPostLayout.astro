@@ -7,8 +7,7 @@ import Navbar from "../components/Navbar.astro";
 import dayjs from "dayjs";
 
 // Icons
-import { Clock } from "@phosphor-icons/react";
-import ProjectTypeIcon from "../components/gallery/ProjectTypeIcon";
+import { CalendarBlank, Tag, CodeSimple, Globe } from "@phosphor-icons/react";
 
 // Lightbox
 import "yet-another-react-lightbox/styles.css";
@@ -19,7 +18,7 @@ import "@fontsource/arvo";
 
 type Props = CollectionEntry<"projects">["data"];
 
-const { title, description, publishDate, type } = Astro.props;
+const { title, description, publishDate, type, link, repo } = Astro.props;
 
 const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
 ---
@@ -33,30 +32,60 @@ const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
         <Navbar />
         <main class="py-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans">
             <article>
-                <div class="flex flex-col gap-4 py-12">
-                    <h1 class="text-white font-sans text-5xl font-bold">
-                        {title}
-                    </h1>
-                    <div class="flex items-center gap-8">
-                        <div
-                            class="flex items-center gap-2 text-base font-medium"
-                        >
-                            <Clock size={20} className="text-gray-400" />
-                            <time class="font-sans text-gray-400">
-                                {formattedDate}
-                            </time>
+                <div class="flex flex-col gap-8 py-12">
+                    <div class="flex flex-col gap-4">
+                        <h1 class="text-white font-sans text-5xl font-bold">
+                            {title}
+                        </h1>
+                        <div class="flex items-center gap-8">
+                            <div
+                                class="flex items-center gap-2 text-base font-medium"
+                            >
+                                <CalendarBlank
+                                    size={20}
+                                    className="text-white/60"
+                                />
+                                <time class="font-sans text-white/60">
+                                    {formattedDate}
+                                </time>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 text-base font-medium"
+                            >
+                                <Tag size={20} className="text-white/60" />
+                                <p class="font-sans text-white/60">
+                                    {type}
+                                </p>
+                            </div>
                         </div>
-                        <div
-                            class="flex items-center gap-2 text-base font-medium"
-                        >
-                            <ProjectTypeIcon
-                                type={type}
-                                className="text-gray-400"
-                            />
-                            <p class="font-sans text-gray-400">
-                                {type}
-                            </p>
-                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        {
+                            link && (
+                                <a href={link} target="_blank">
+                                    <button class="flex items-center text-sm gap-2 bg-persian-blue-700 hover:bg-persian-blue-600 transition-colors duration-100 text-gray-100 px-3 py-2 rounded-md">
+                                        <Globe
+                                            size={20}
+                                            className="text-white/50"
+                                        />
+                                        <span>View Project</span>
+                                    </button>
+                                </a>
+                            )
+                        }
+                        {
+                            repo && (
+                                <a href={repo} target="_blank">
+                                    <button class="flex text-sm items-center gap-2 bg-shark-950 hover:bg-shark-900 transition-colors duration-100 text-gray-100 px-3 py-2 rounded-md">
+                                        <CodeSimple
+                                            size={20}
+                                            className="text-white/50"
+                                        />
+                                        <span>View Code</span>
+                                    </button>
+                                </a>
+                            )
+                        }
                     </div>
                 </div>
                 <slot />
@@ -71,7 +100,6 @@ const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
 
     html {
         font-family: system-ui, sans-serif;
-        background: #121212;
         box-sizing: border-box;
         scroll-behavior: smooth;
 

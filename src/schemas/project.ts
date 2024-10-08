@@ -7,4 +7,6 @@ export const projectSchema = z.object({
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(true),
     type: z.enum(["Frontend", "Backend", "Fullstack", "Design"]),
+    link: z.string().url().optional(),
+    repo: z.string().url().optional(),
 });
