@@ -6,6 +6,7 @@ export default {
             fontFamily: {
                 departure: ["DepartureMonospace", "monospace"],
                 sans: ["Inter", "sans-serif"],
+                arvo: ["Arvo", "serif"],
             },
             colors: {
                 row: {

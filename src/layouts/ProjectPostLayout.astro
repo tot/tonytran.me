@@ -1,12 +1,21 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import "@fontsource/ubuntu";
 import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Navbar.astro";
+
+// Date
 import dayjs from "dayjs";
+
+// Icons
 import { Clock } from "@phosphor-icons/react";
 import ProjectTypeIcon from "../components/gallery/ProjectTypeIcon";
+
+// Lightbox
 import "yet-another-react-lightbox/styles.css";
+
+// Fonts
+import "@fontsource/ubuntu";
+import "@fontsource/arvo";
 
 type Props = CollectionEntry<"projects">["data"];
 
@@ -56,6 +65,10 @@ const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
     </body>
 </html>
 <style is:global>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+
     html {
         font-family: system-ui, sans-serif;
         background: #121212;
@@ -74,13 +87,23 @@ const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
             monospace;
     }
 
-    span.icon-link::before {
-        content: "#";
-        font-size: 0.8em;
-        margin-left: 10px;
-        text-decoration: none !important;
-        color: red;
-    }
+    /* @layer components {
+        *:is(h1, h2, h3, h4, h5, h6) {
+            @apply flex items-center gap-4;
+        }
+
+        *:is(h1, h2, h3, h4, h5, h6) > a {
+            @apply text-neutral-500 opacity-0 transition-all duration-200;
+        }
+
+        *:is(h1, h2, h3, h4, h5, h6):hover > a {
+            @apply opacity-100;
+        }
+
+        *:is(h1, h2, h3, h4, h5, h6) > a:hover {
+            @apply text-red-500;
+        }
+    } */
 
     /* Register your custom font family and tell the browser where to find it. */
     @font-face {
@@ -89,5 +112,11 @@ const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
+    }
+
+    @layer components {
+        *:is(h1, h2, h3, h4, h5, h6) {
+            @apply flex items-center gap-2;
+        }
     }
 </style>
