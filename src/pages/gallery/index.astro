@@ -1,27 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Navbar from "../../components/Navbar.astro";
 import Explorer from "../../components/gallery/Explorer.astro";
-import { getCollection } from "astro:content";
-import type { ProjectCollection } from "../../types/project";
-
-const projects = await getCollection("projects");
-console.log(projects);
 ---
 
 <Layout title="Tony Tran - Gallery">
     <main class="py-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans">
         <Explorer />
-
-        {
-            projects.map((project: ProjectCollection) => (
-                <a href={`/gallery/${project.slug}`}>
-                    <div class="bg-white">
-                        <h2>{project.data.title}</h2>
-                        <p>{project.data.description}</p>
-                    </div>
-                </a>
-            ))
-        }
     </main>
 </Layout>

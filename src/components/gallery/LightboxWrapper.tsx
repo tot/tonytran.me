@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import Lightbox, { type Slide } from "yet-another-react-lightbox";
-import Inline from "yet-another-react-lightbox/plugins/inline";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 interface LightboxWrapperProps {
