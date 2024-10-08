@@ -16,25 +16,29 @@ const props = Astro.props;
     @layer components {
         /* Styles for all mdx-links */
         .mdx-link {
-            @apply transition-all duration-200;
+            @apply transition-colors duration-100;
         }
 
         /* Styles specifically for links not in headings */
         .mdx-link:not(:is(h1, h2, h3, h4, h5, h6) *) {
-            @apply text-blue-600;
+            @apply text-link underline;
         }
 
         .mdx-link:not(:is(h1, h2, h3, h4, h5, h6) *):hover {
-            @apply text-blue-800 underline;
+            @apply text-gray-300;
         }
 
         /* Existing styles for links inside headings */
         *:is(h1, h2, h3, h4, h5, h6) > .mdx-link {
-            @apply opacity-0;
+            @apply opacity-0 text-link hover:text-gray-300;
         }
 
         *:is(h1, h2, h3, h4, h5, h6):hover > .mdx-link {
             @apply opacity-100;
         }
+
+        /* *:is(h1, h2, h3, h4, h5, h6) > .mdx-link:hover {
+            @apply text-red-500;
+        } */
     }
 </style>

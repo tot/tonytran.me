@@ -16,7 +16,7 @@ const ProjectCard = ({ title, description, year, href }: ProjectCardProps) => {
                 <div className="space-y-2 w-full">
                     <div className="w-full flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
                         <div className="flex flex-nowrap items-center gap-3">
-                            <h3 className="text-base transition-all duration-100 hover:underline underline-offset-2 font-medium flex items-center gap-2 text-white font-sans tracking-wide">
+                            <h3 className="text-base transition-all duration-100 group-hover:underline underline-offset-2 font-medium flex items-center gap-2 text-white font-sans tracking-wide">
                                 {title}
                             </h3>
                         </div>

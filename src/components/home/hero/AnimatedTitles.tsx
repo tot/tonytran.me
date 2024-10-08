@@ -41,7 +41,7 @@ const AnimatedTitles = () => {
                             },
                         },
                     }}
-                    className="text-sm font-sans text-white/60 absolute w-full py-1"
+                    className="text-base font-sans text-white/60 absolute w-full py-1"
                 >
                     {titles[currentTitleIndex].split("").map((char, index) => (
                         <motion.span

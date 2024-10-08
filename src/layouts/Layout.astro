@@ -26,10 +26,15 @@ const { title } = Astro.props;
     </body>
 </html>
 <style is:global>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+
     html {
         font-family: system-ui, sans-serif;
-        background: #121212;
         box-sizing: border-box;
+
+        @apply bg-background;
     }
     code {
         font-family:
