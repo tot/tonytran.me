@@ -8,30 +8,23 @@ import {
     useReactTable,
     type SortDirection,
 } from "@tanstack/react-table";
-import DesignIcon from "./icons/DesignIcon";
-import DevelopedIcon from "./icons/DevelopedIcon";
 import {
-    BracketsCurly,
+    CodeSimple,
     PenNib,
     SortAscending,
     SortDescending,
 } from "@phosphor-icons/react";
 import { cn } from "../../lib/utils";
-type Project = {
-    name: string;
-    date: string;
-    type: "Design" | "Frontend" | "Backend" | "Fullstack";
-};
+import type { ProjectCollection } from "../../types/project";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
-const data: Project[] = [
-    { name: "Sole AIO super long title abc", date: "Sep 2024", type: "Design" },
-    { name: "dasdas development project", date: "Sep 2024", type: "Frontend" },
-    { name: "aa development project2", date: "Sep 2024", type: "Backend" },
-    { name: "ccc development project3", date: "Sep 2024", type: "Fullstack" },
-];
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 interface RowIconProps {
-    type: Project["type"];
+    type: ProjectCollection["data"]["type"];
     className?: string;
 }
 
@@ -40,15 +33,15 @@ const RowIcon = ({ type, className }: RowIconProps) => {
         case "Design":
             return <PenNib size={20} className={className} />;
         case "Frontend":
-            return <BracketsCurly size={20} className={className} />;
+            return <CodeSimple size={20} className={className} />;
         case "Backend":
-            return <BracketsCurly size={20} className={className} />;
+            return <CodeSimple size={20} className={className} />;
         case "Fullstack":
-            return <BracketsCurly size={20} className={className} />;
+            return <CodeSimple size={20} className={className} />;
     }
 };
 
-const RowBackgroundColor = (type: Project["type"]) => {
+const RowBackgroundColor = (type: ProjectCollection["data"]["type"]) => {
     switch (type) {
         case "Design":
             return "hover:bg-row-design/10";
@@ -61,7 +54,7 @@ const RowBackgroundColor = (type: Project["type"]) => {
     }
 };
 
-const RowTextColor = (type: Project["type"]) => {
+const RowTextColor = (type: ProjectCollection["data"]["type"]) => {
     switch (type) {
         case "Design":
             return "text-row-design";
@@ -74,14 +67,18 @@ const RowTextColor = (type: Project["type"]) => {
     }
 };
 
-const columnHelper = createColumnHelper<Project>();
+const columnHelper = createColumnHelper<ProjectCollection["data"]>();
 
-const Table = () => {
+interface TableProps {
+    data: ProjectCollection[];
+}
+
+const Table = ({ data }: TableProps) => {
     const [sorting, setSorting] = useState<SortingState>([]);
 
     const columns = useMemo(
         () => [
-            columnHelper.accessor("name", {
+            columnHelper.accessor("title", {
                 header: "Name",
                 cell: (info) => (
                     <div className="flex items-center gap-2 p-0.5">
@@ -105,21 +102,36 @@ const Table = () => {
                     </div>
                 ),
                 sortingFn: "alphanumeric",
+                size: 300,
             }),
             columnHelper.accessor("type", {
                 header: "Type",
                 sortingFn: "alphanumeric",
+                size: 150,
             }),
-            columnHelper.accessor("date", {
+            columnHelper.accessor("publishDate", {
                 header: "Date",
-                sortingFn: "alphanumeric",
+                sortingFn: "datetime",
+                cell: (info) => {
+                    const dateString = info.getValue();
+                    // Ensure the date is treated as UTC
+                    const date = dayjs.utc(dateString, "YYYY-MM-DD");
+                    // Format the date, still in UTC
+                    return date.format("MMMM, YYYY");
+                },
+                size: 128,
             }),
         ],
         [],
     );
 
+    const memoizedData = useMemo(
+        () => data.map((item) => ({ ...item.data, slug: item.slug })),
+        [data],
+    );
+
     const table = useReactTable({
-        data,
+        data: memoizedData,
         columns,
         state: {
             sorting,
@@ -129,28 +141,36 @@ const Table = () => {
         getSortedRowModel: getSortedRowModel(),
         enableSorting: true,
         enableMultiSort: false,
+        enableColumnResizing: false,
+        columnResizeMode: "onChange",
     });
+
     return (
-        <div className="flex flex-col gap-2">
-            <table className="w-full">
+        <div className="w-full overflow-x-auto">
+            <table className="w-full table-fixed">
+                <colgroup>
+                    {table.getAllColumns().map((column) => (
+                        <col
+                            key={column.id}
+                            style={{ width: column.getSize() }}
+                        />
+                    ))}
+                </colgroup>
                 <thead>
                     {table.getHeaderGroups().map((headerGroup) => (
                         <tr
                             key={headerGroup.id}
-                            className="grid grid-cols-12 gap-4 font-sans border-b border-white/10 pb-2 select-none"
+                            className="border-b border-white/10 pb-2"
                         >
                             {headerGroup.headers.map((header) => (
                                 <th
                                     key={header.id}
-                                    className={`${
-                                        header.id === "name"
-                                            ? "col-span-6"
-                                            : "col-span-3"
-                                    } text-left`}
+                                    className="text-left p-2 font-sans text-sm text-white/60 relative"
+                                    style={{ width: header.getSize() }}
                                 >
                                     {header.column.getCanSort() ? (
                                         <div
-                                            className={`flex items-center gap-1 text-white/60 tracking-wide text-sm font-medium cursor-pointer hover:text-white`}
+                                            className="flex items-center gap-1 cursor-pointer hover:text-white"
                                             onClick={header.column.getToggleSortingHandler()}
                                         >
                                             {flexRender(
@@ -174,22 +194,29 @@ const Table = () => {
                                             header.getContext(),
                                         )
                                     )}
+                                    {header.column.getCanResize() && (
+                                        <div
+                                            onMouseDown={header.getResizeHandler()}
+                                            onTouchStart={header.getResizeHandler()}
+                                            className={`absolute right-0 top-0 h-full w-1 cursor-col-resize select-none touch-none ${
+                                                header.column.getIsResizing()
+                                                    ? "bg-white/50"
+                                                    : "bg-white/20"
+                                            }`}
+                                        />
+                                    )}
                                 </th>
                             ))}
                         </tr>
                     ))}
                 </thead>
                 <tbody>
-                    {table.getRowModel().rows.map((row, index) => (
+                    {table.getRowModel().rows.map((row) => (
                         <tr
                             key={row.id}
                             className={cn(
-                                "w-full grid grid-cols-12 items-center gap-4 group font-sans transition-colors duration-100",
+                                "group font-sans transition-colors duration-100 odd:bg-white/5",
                                 RowBackgroundColor(row.original.type),
-                                {
-                                    // "bg-[#222222]": index % 2 === 0,
-                                    "mt-2": index === 0,
-                                },
                             )}
                         >
                             {row.getVisibleCells().map((cell) => (
@@ -198,18 +225,19 @@ const Table = () => {
                                     className={cn(
                                         "tracking-wide text-sm transition-colors duration-100",
                                         RowTextColor(cell.row.original.type),
-                                        {
-                                            "col-span-6":
-                                                cell.column.id === "name",
-                                            "col-span-3":
-                                                cell.column.id !== "name",
-                                        },
                                     )}
+                                    style={{ width: cell.column.getSize() }}
                                 >
-                                    {flexRender(
-                                        cell.column.columnDef.cell,
-                                        cell.getContext(),
-                                    )}
+                                    <a
+                                        href={`/gallery/${cell.row.original.slug}`}
+                                        rel="noopener noreferrer"
+                                        className="px-2 py-1 block w-full h-full"
+                                    >
+                                        {flexRender(
+                                            cell.column.columnDef.cell,
+                                            cell.getContext(),
+                                        )}
+                                    </a>
                                 </td>
                             ))}
                         </tr>
