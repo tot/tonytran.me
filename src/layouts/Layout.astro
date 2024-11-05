@@ -1,0 +1,68 @@
+---
+import "@fontsource/ubuntu";
+import "@fontsource-variable/inter";
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-grid">
+        <Navbar />
+        <slot />
+    </body>
+</html>
+<style is:global>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+
+    html {
+        font-family: system-ui, sans-serif;
+        box-sizing: border-box;
+
+        @apply bg-background;
+    }
+    code {
+        font-family:
+            Menlo,
+            Monaco,
+            Lucida Console,
+            Liberation Mono,
+            DejaVu Sans Mono,
+            Bitstream Vera Sans Mono,
+            Courier New,
+            monospace;
+    }
+
+    /* Register your custom font family and tell the browser where to find it. */
+    @font-face {
+        font-family: "DepartureMonospace";
+        src: url("/fonts/DepartureMono-Regular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* .bg-grid {
+		background-color: rgb(19, 21, 26);
+		background-image: 
+			linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+		background-size: 20px 20px;
+		height: 100vh;
+	} */
+</style>

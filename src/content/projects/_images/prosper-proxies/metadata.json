@@ -1,0 +1,46 @@
+{
+    "images": [
+        {
+            "filename": "Login.png",
+            "alt": "Login",
+            "caption": "Login",
+            "order": 1
+        },
+        {
+            "filename": "Dashboard - Home - Empty State.png",
+            "alt": "Dashboard - Home (Empty State)",
+            "caption": "Dashboard - Home (Empty State)",
+            "order": 2
+        },
+        {
+            "filename": "Dashboard - Home.png",
+            "alt": "Dashboard - Home (Populated)",
+            "caption": "Dashboard - Home (Populated)",
+            "order": 3
+        },
+        {
+            "filename": "Dashboard - Proxies - Empty State.png",
+            "alt": "Dashboard - Proxies (Empty State)",
+            "caption": "Dashboard - Proxies (Empty State)",
+            "order": 4
+        },
+        {
+            "filename": "Dashboard - Proxies.png",
+            "alt": "Dashboard - Proxies (Populated)",
+            "caption": "Dashboard - Proxies (Populated)",
+            "order": 5
+        },
+        {
+            "filename": "Dashboard - Purchase - Payment.png",
+            "alt": "Dashboard - Pay for proxies",
+            "caption": "Dashboard - Pay for proxies",
+            "order": 6
+        },
+        {
+            "filename": "Dashboard - Purchase - Select Plan.png",
+            "alt": "Dashboard - Select plan to purchase",
+            "caption": "Dashboard - Select plan to purchase",
+            "order": 7
+        }
+    ]
+}

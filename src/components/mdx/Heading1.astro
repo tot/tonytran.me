@@ -1,0 +1,10 @@
+---
+const props = Astro.props;
+---
+
+<h1 {...props} class="pt-4 font-sans text-3xl font-bold text-gray-100">
+    <slot />
+    <!-- <a class="text-white" href={`#${props.id}`}>
+        {props.id}
+    </a> -->
+</h1>

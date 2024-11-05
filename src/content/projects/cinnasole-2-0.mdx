@@ -1,0 +1,32 @@
+---
+title: Cinnasole 2.0
+description: Description of the first project
+publishDate: 2020-05-01
+updatedDate: 2024-11-04
+slug: cinnasole-2-0
+type: Frontend
+---
+
+import { Image } from "astro:assets";
+import MdxImage from "../../components/mdx/MdxImage.astro";
+import { IMAGE_SIZES } from "../../constants/image";
+
+# Technologies
+
+-   Electron
+-   HTML/CSS
+-   JavaScript
+
+# Images
+
+{props.images.map((image, index) => (
+
+<MdxImage
+    key={index}
+    size="MDX_MD"
+    src={image}
+    alt={image.alt}
+    caption={image.caption}
+    class="mx-auto"
+/>
+))}

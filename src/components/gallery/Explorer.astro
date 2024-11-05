@@ -1,0 +1,69 @@
+---
+import { Folder } from "@phosphor-icons/react";
+import Table from "./Table";
+
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<div class="p-6 border border-white/10 relative rounded-md">
+    <div
+        class="absolute top-0 left-3 transform -translate-y-1/2 bg-background px-3"
+    >
+        <div class="flex items-center gap-2">
+            <Folder size={20} className="text-white" weight="bold" />
+            <p
+                class="text-white text-base font-sans font-semibold tracking-wide"
+            >
+                gallery
+            </p>
+        </div>
+    </div>
+
+    <Table data={projects} client:load />
+</div>
+
+<style>
+    table {
+    }
+
+    tbody {
+    }
+
+    th {
+    }
+
+    tfoot {
+    }
+
+    tfoot th {
+    }
+
+    .resizer {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background: rgba(0, 0, 0, 0.5);
+        cursor: col-resize;
+        user-select: none;
+        touch-action: none;
+    }
+
+    .resizer.isResizing {
+        background: blue;
+        opacity: 1;
+    }
+
+    @media (hover: hover) {
+        .resizer {
+            opacity: 0;
+        }
+
+        *:hover > .resizer {
+            opacity: 1;
+        }
+    }
+</style>

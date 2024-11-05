@@ -1,0 +1,33 @@
+---
+title: SG Proxies
+description: Description of the first project
+publishDate: 2021-01-01
+updatedDate: 2024-11-04
+slug: sg-proxies
+type: Frontend
+repo: https://github.com/tot/sg-proxies
+link: https://sg-proxies.vercel.app/
+---
+
+import { Image } from "astro:assets";
+import MdxImage from "../../components/mdx/MdxImage.astro";
+import { IMAGE_SIZES } from "../../constants/image";
+
+# Technologies
+
+-   React
+-   TailwindCSS
+
+# Images
+
+{props.images.map((image, index) => (
+
+<MdxImage
+    key={index}
+    size="MDX_MD"
+    src={image}
+    alt={image.alt}
+    caption={image.caption}
+    class="mx-auto"
+/>
+))}

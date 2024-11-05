@@ -1,0 +1,60 @@
+---
+import ProjectCard from "./ProjectCard";
+import { Code } from "@phosphor-icons/react";
+
+const projects = [
+    {
+        title: "Gallery",
+        description:
+            "Collection of my past projects, both personal and professional.",
+        year: "2018 - Present",
+        href: "/gallery",
+    },
+    {
+        title: "Virginia Entrepreneurship Organization",
+        description:
+            "Web portal for members to schedule onboarding coffee chats and connect with other members.",
+        year: "2022 - 2023",
+        href: "https://github.com/veovirginia/platform",
+    },
+    {
+        title: "CavComms",
+        description:
+            "Real-time communications platform for controlling FRC robots.",
+        year: "2022",
+        href: "https://github.com/tot/cavcomms",
+    },
+    // {
+    //     title: "DSG AutoCheckout",
+    //     description:
+    //         "Automatically purchase limited items from Dick's Sporting Goods in under 5 seconds.",
+    //     year: "2021",
+    //     href: "https://github.com/tot/dsg-autocheckout",
+    // },
+];
+---
+
+<div class="">
+    <div class="flex items-center gap-2">
+        <Code size={20} className="text-[#4de272]" weight="bold" />
+        <h1
+            class="text-[#4de272] font-sans text-lg tracking-wide font-semibold"
+        >
+            projects
+        </h1>
+    </div>
+    <div class="border-b border-[#4de272]/25 w-full mt-3 mb-8"></div>
+    <div class="w-full grid grid-cols-1 gap-4">
+        {
+            projects.map((project) => (
+                <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    year={project.year}
+                    href={project.href}
+                    client:load
+                />
+            ))
+        }
+    </div>
+</div>

@@ -1,0 +1,44 @@
+---
+const props = Astro.props;
+---
+
+<a {...props} class="mdx-link">
+    <span class="">
+        <slot />
+    </span>
+</a>
+
+<style is:global>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+
+    @layer components {
+        /* Styles for all mdx-links */
+        .mdx-link {
+            @apply transition-colors duration-100;
+        }
+
+        /* Styles specifically for links not in headings */
+        .mdx-link:not(:is(h1, h2, h3, h4, h5, h6) *) {
+            @apply text-link underline;
+        }
+
+        .mdx-link:not(:is(h1, h2, h3, h4, h5, h6) *):hover {
+            @apply text-gray-300;
+        }
+
+        /* Existing styles for links inside headings */
+        *:is(h1, h2, h3, h4, h5, h6) > .mdx-link {
+            @apply opacity-0 text-link hover:text-gray-300;
+        }
+
+        *:is(h1, h2, h3, h4, h5, h6):hover > .mdx-link {
+            @apply opacity-100;
+        }
+
+        /* *:is(h1, h2, h3, h4, h5, h6) > .mdx-link:hover {
+            @apply text-red-500;
+        } */
+    }
+</style>

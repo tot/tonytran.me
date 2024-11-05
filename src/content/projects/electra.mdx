@@ -1,0 +1,33 @@
+---
+title: Electra
+description: Description of the first project
+publishDate: 2021-02-01
+updatedDate: 2024-11-04
+slug: electra
+type: Frontend
+---
+
+import { Image } from "astro:assets";
+import MdxImage from "../../components/mdx/MdxImage.astro";
+import { IMAGE_SIZES } from "../../constants/image";
+
+# Technologies
+
+-   Electron
+-   HTML/CSS
+-   JavaScript
+-   Framer Motion
+
+# Images
+
+{props.images.map((image, index) => (
+
+<MdxImage
+    key={index}
+    size="MDX_MD"
+    src={image}
+    alt={image.alt}
+    caption={image.caption}
+    class="mx-auto"
+/>
+))}

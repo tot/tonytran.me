@@ -1,0 +1,34 @@
+---
+title: Wrath Bots Dashboard
+description: Description of the first project
+publishDate: 2022-02-01
+updatedDate: 2024-11-04
+slug: wrath-bots-dashboard
+type: Frontend
+repo: https://github.com/tot/wrath-dashboard
+link: https://wrath-dashboard.vercel.app
+---
+
+import { Image } from "astro:assets";
+import MdxImage from "../../components/mdx/MdxImage.astro";
+import { IMAGE_SIZES } from "../../constants/image";
+
+# Technologies
+
+-   Next.js
+-   TailwindCSS
+-   React
+
+# Images
+
+{props.images.map((image, index) => (
+
+<MdxImage
+    key={index}
+    size="MDX_MD"
+    src={image}
+    alt={image.alt}
+    caption={image.caption}
+    class="mx-auto"
+/>
+))}

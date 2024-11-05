@@ -1,0 +1,52 @@
+{
+    "images": [
+        {
+            "filename": "Landing.png",
+            "alt": "Landing",
+            "caption": "Landing",
+            "order": 1
+        },
+        {
+            "filename": "Dashboard.png",
+            "alt": "User Dashboard",
+            "caption": "User Dashboard",
+            "order": 2
+        },
+        {
+            "filename": "Dashboard - Orders.png",
+            "alt": "Admin Dashboard - View Orders",
+            "caption": "Admin Dashboard - View Orders",
+            "order": 3
+        },
+        {
+            "filename": "Dashboard - Orders w Info.png",
+            "alt": "Admin Dashboard - View Order Info",
+            "caption": "Admin Dashboard - View Order Info",
+            "order": 4
+        },
+        {
+            "filename": "Dashboard - Users.png",
+            "alt": "Admin Dashboard - View Users",
+            "caption": "Admin Dashboard - View Users",
+            "order": 5
+        },
+        {
+            "filename": "Dashboard - Users w Info.png",
+            "alt": "Admin Dashboard - View User Info",
+            "caption": "Admin Dashboard - View User Info",
+            "order": 6
+        },
+        {
+            "filename": "Dashboard - Discounts.png",
+            "alt": "Admin Dashboard - View Discounts",
+            "caption": "Admin Dashboard - View Discounts",
+            "order": 7
+        },
+        {
+            "filename": "Dashboard - Discounts w Create.png",
+            "alt": "Admin Dashboard - Create Discount",
+            "caption": "Admin Dashboard - Create Discount",
+            "order": 8
+        }
+    ]
+}

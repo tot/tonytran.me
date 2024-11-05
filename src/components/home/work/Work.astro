@@ -1,0 +1,52 @@
+---
+import WorkCard from "../../home/work/WorkCard";
+import { Briefcase } from "@phosphor-icons/react";
+
+const work = [
+    {
+        title: "Software Engineer Intern",
+        company: "Investure",
+        date: "May 2024 - Aug 2024",
+        description:
+            "Built interfaces and APIs using LLMs to summarize financial documents for analysts.",
+        technologies: ["FastAPI", "React", "ASP.NET", "MSSQL"],
+    },
+    {
+        title: "Frontend Engineer",
+        company: "web3 startup",
+        date: "Sep 2022 - May 2023",
+        description:
+            "Founding frontend engineer, built the first version of a crypto + NFT trading platform for retail investors.",
+        technologies: [
+            "Next.js",
+            "React",
+            "TailwindCSS",
+            "TypeScript",
+            "WebSockets",
+        ],
+    },
+    {
+        title: "Frontend Developer",
+        company: "freelance",
+        date: "Oct 2018 - Present",
+        description:
+            "Operating a digital agency focused on startups. Specialize in building high conversion websites and web apps that grow revenue.",
+        technologies: ["React", "TailwindCSS", "Node.js", "Next.js"],
+    },
+];
+---
+
+<div class="">
+    <div class="flex items-center gap-2">
+        <Briefcase size={20} className="text-[#8678ff]" weight="bold" />
+        <h1
+            class="text-[#8678ff] font-sans text-lg tracking-wide font-semibold"
+        >
+            work
+        </h1>
+    </div>
+    <div class="border-b border-[#8678ff]/25 w-full mt-3 mb-8"></div>
+    <div class="flex flex-col gap-8">
+        {work.map((item, index) => <WorkCard {...item} index={index} />)}
+    </div>
+</div>

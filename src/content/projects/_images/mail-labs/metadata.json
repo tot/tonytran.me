@@ -1,0 +1,28 @@
+{
+    "images": [
+        {
+            "filename": "First Step.png",
+            "alt": "Step 1 - Select package",
+            "caption": "Step 1 - Select package",
+            "order": 1
+        },
+        {
+            "filename": "Second Step.png",
+            "alt": "Step 2 - Select amount",
+            "caption": "Step 2 - Select amount",
+            "order": 2
+        },
+        {
+            "filename": "Last Step.png",
+            "alt": "Step 3 - Payment",
+            "caption": "Step 3 - Payment",
+            "order": 3
+        },
+        {
+            "filename": "Email.png",
+            "alt": "Email Confirmation",
+            "caption": "Email Confirmation",
+            "order": 4
+        }
+    ]
+}

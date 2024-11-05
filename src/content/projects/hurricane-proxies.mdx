@@ -1,0 +1,34 @@
+---
+title: Hurricane Proxies
+description: Description of the first project
+publishDate: 2021-10-01
+updatedDate: 2024-11-04
+slug: hurricane-proxies
+type: Frontend
+repo: https://github.com/tot/hurricane-proxies
+link: https://hurricane-proxies.vercel.app
+---
+
+import { Image } from "astro:assets";
+import MdxImage from "../../components/mdx/MdxImage.astro";
+import { IMAGE_SIZES } from "../../constants/image";
+
+# Technologies
+
+-   HTML/CSS
+-   JavaScript
+-   TailwindCSS
+
+# Images
+
+{props.images.map((image, index) => (
+
+<MdxImage
+    key={index}
+    size="MDX_MD"
+    src={image}
+    alt={image.alt}
+    caption={image.caption}
+    class="mx-auto"
+/>
+))}

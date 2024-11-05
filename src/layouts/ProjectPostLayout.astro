@@ -1,0 +1,155 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from "../components/Navbar.astro";
+
+// Date
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
+
+// Icons
+import { CalendarBlank, Tag, CodeSimple, Globe } from "@phosphor-icons/react";
+
+// Lightbox
+import "yet-another-react-lightbox/styles.css";
+
+// Fonts
+import "@fontsource/ubuntu";
+import "@fontsource/arvo";
+
+type Props = CollectionEntry<"projects">["data"];
+
+const { title, description, publishDate, type, link, repo } = Astro.props;
+
+const formattedDate = dayjs.utc(publishDate).format("MMM YYYY");
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+
+    <body>
+        <Navbar />
+        <main class="py-8 space-y-8 px-6 max-w-3xl w-full mx-auto font-sans">
+            <article>
+                <div class="flex flex-col gap-8 py-12">
+                    <div class="flex flex-col gap-4">
+                        <h1 class="text-white font-sans text-5xl font-bold">
+                            {title}
+                        </h1>
+                        <div class="flex items-center gap-8">
+                            <div
+                                class="flex items-center gap-2 text-base font-medium"
+                            >
+                                <CalendarBlank
+                                    size={20}
+                                    className="text-white/60"
+                                />
+                                <time class="font-sans text-white/60">
+                                    {formattedDate}
+                                </time>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 text-base font-medium"
+                            >
+                                <Tag size={20} className="text-white/60" />
+                                <p class="font-sans text-white/60">
+                                    {type}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        {
+                            link && (
+                                <a href={link} target="_blank">
+                                    <button class="flex items-center text-sm gap-2 bg-persian-blue-700 hover:bg-persian-blue-600 transition-colors duration-100 text-gray-100 px-3 py-2 rounded-md">
+                                        <Globe
+                                            size={20}
+                                            className="text-white/50"
+                                        />
+                                        <span>View Project</span>
+                                    </button>
+                                </a>
+                            )
+                        }
+                        {
+                            repo && (
+                                <a href={repo} target="_blank">
+                                    <button class="flex text-sm items-center gap-2 bg-shark-950 hover:bg-shark-900 transition-colors duration-100 text-gray-100 px-3 py-2 rounded-md">
+                                        <CodeSimple
+                                            size={20}
+                                            className="text-white/50"
+                                        />
+                                        <span>View Code</span>
+                                    </button>
+                                </a>
+                            )
+                        }
+                    </div>
+                </div>
+                <slot />
+            </article>
+        </main>
+    </body>
+</html>
+<style is:global>
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+
+    html {
+        font-family: system-ui, sans-serif;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+
+        @apply bg-background;
+    }
+    code {
+        font-family:
+            Menlo,
+            Monaco,
+            Lucida Console,
+            Liberation Mono,
+            DejaVu Sans Mono,
+            Bitstream Vera Sans Mono,
+            Courier New,
+            monospace;
+    }
+
+    /* @layer components {
+        *:is(h1, h2, h3, h4, h5, h6) {
+            @apply flex items-center gap-4;
+        }
+
+        *:is(h1, h2, h3, h4, h5, h6) > a {
+            @apply text-neutral-500 opacity-0 transition-all duration-200;
+        }
+
+        *:is(h1, h2, h3, h4, h5, h6):hover > a {
+            @apply opacity-100;
+        }
+
+        *:is(h1, h2, h3, h4, h5, h6) > a:hover {
+            @apply text-red-500;
+        }
+    } */
+
+    /* Register your custom font family and tell the browser where to find it. */
+    @font-face {
+        font-family: "DepartureMonospace";
+        src: url("/fonts/DepartureMono-Regular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @layer components {
+        *:is(h1, h2, h3, h4, h5, h6) {
+            @apply flex items-center gap-2;
+        }
+    }
+</style>

@@ -1,0 +1,34 @@
+{
+    "images": [
+        {
+            "filename": "Landing.png",
+            "alt": "Landing Page",
+            "caption": "Landing Page",
+            "order": 1
+        },
+        {
+            "filename": "Dashboard.png",
+            "alt": "Dashboard",
+            "caption": "Dashboard",
+            "order": 2
+        },
+        {
+            "filename": "Dashboard - No proxies.png",
+            "alt": "Dashboard with no proxies",
+            "caption": "Dashboard with no proxies",
+            "order": 3
+        },
+        {
+            "filename": "Dashboard - Purchase 1.png",
+            "alt": "Dashboard - Purchase 1",
+            "caption": "Dashboard - step 1 of purchase",
+            "order": 4
+        },
+        {
+            "filename": "Dashboard - Purchase 2.png",
+            "alt": "Dashboard - Purchase 2",
+            "caption": "Dashboard - step 2 of purchase",
+            "order": 5
+        }
+    ]
+}
