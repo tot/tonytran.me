@@ -29,7 +29,9 @@ export default function LightboxWrapper({
 
     return (
         <>
-            {children}
+            <div className="relative border border-stone-700/30 rounded overflow-hidden shadow bg-stone-700/5">
+                {children}
+            </div>
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}

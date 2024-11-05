@@ -117,7 +117,7 @@ const Table = ({ data }: TableProps) => {
                     // Ensure the date is treated as UTC
                     const date = dayjs.utc(dateString, "YYYY-MM-DD");
                     // Format the date, still in UTC
-                    return date.format("MMMM, YYYY");
+                    return date.format("MMM YYYY");
                 },
                 size: 128,
             }),
@@ -165,7 +165,7 @@ const Table = ({ data }: TableProps) => {
                             {headerGroup.headers.map((header) => (
                                 <th
                                     key={header.id}
-                                    className="text-left p-2 font-sans text-sm text-white/60 relative"
+                                    className="text-left p-2 font-sans text-sm text-white/60 relative select-none"
                                     style={{ width: header.getSize() }}
                                 >
                                     {header.column.getCanSort() ? (
@@ -215,7 +215,7 @@ const Table = ({ data }: TableProps) => {
                         <tr
                             key={row.id}
                             className={cn(
-                                "group font-sans transition-colors duration-100 odd:bg-white/5",
+                                "group font-sans transition-colors duration-100 border-t border-white/10",
                                 RowBackgroundColor(row.original.type),
                             )}
                         >

@@ -44,7 +44,7 @@ export default {
 
                 "corner-highlight": "#FF8343",
                 link: "#6aa4ca",
-                background: "#16181f",
+                background: "#1b1c1f",
                 foreground: "#252930",
             },
         },
