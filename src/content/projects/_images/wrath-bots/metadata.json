@@ -1,0 +1,40 @@
+{
+    "images": [
+        {
+            "filename": "Website.png",
+            "alt": "Landing Page",
+            "caption": "Landing Page",
+            "order": 1
+        },
+        {
+            "filename": "Dashboard.png",
+            "alt": "Dashboard",
+            "caption": "Dashboard",
+            "order": 2
+        },
+        {
+            "filename": "Tasks.png",
+            "alt": "Tasks",
+            "caption": "Tasks",
+            "order": 3
+        },
+        {
+            "filename": "Profiles.png",
+            "alt": "Profiles",
+            "caption": "Profiles",
+            "order": 4
+        },
+        {
+            "filename": "Proxy List.png",
+            "alt": "Proxy List",
+            "caption": "Proxy List",
+            "order": 5
+        },
+        {
+            "filename": "Settings.png",
+            "alt": "Settings",
+            "caption": "Settings",
+            "order": 6
+        }
+    ]
+}

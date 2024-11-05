@@ -1,0 +1,40 @@
+{
+    "images": [
+        {
+            "filename": "Login.png",
+            "alt": "Login Page",
+            "caption": "Login Page",
+            "order": 1
+        },
+        {
+            "filename": "Login - Setup.png",
+            "alt": "Login Setup",
+            "caption": "Login Setup",
+            "order": 2
+        },
+        {
+            "filename": "Login - Two Factor Authorization.png",
+            "alt": "Login Two Factor Authorization",
+            "caption": "Login Two Factor Authorization",
+            "order": 3
+        },
+        {
+            "filename": "Login - Two Factor Authorization - Wrong Code.png",
+            "alt": "Login Two Factor Authorization Wrong Code",
+            "caption": "Login Two Factor Authorization Wrong Code",
+            "order": 4
+        },
+        {
+            "filename": "Dashboard - Subscription.png",
+            "alt": "Dashboard Subscription",
+            "caption": "Dashboard Subscription",
+            "order": 5
+        },
+        {
+            "filename": "Dashboard - Security.png",
+            "alt": "Dashboard Security",
+            "caption": "Dashboard Security",
+            "order": 6
+        }
+    ]
+}

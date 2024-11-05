@@ -1,0 +1,64 @@
+{
+    "images": [
+        {
+            "filename": "Dashboard.png",
+            "alt": "Dashboard",
+            "caption": "Dashboard view",
+            "order": 1
+        },
+        {
+            "filename": "Tasks.png",
+            "alt": "Tasks view",
+            "caption": "Tasks view with active tasks",
+            "order": 1
+        },
+        {
+            "filename": "Create Task.png",
+            "alt": "Create Task",
+            "caption": "Create new task modal",
+            "order": 2
+        },
+        {
+            "filename": "Select Platform.png",
+            "alt": "Create Task Group - Select Platform",
+            "caption": "Create new task group - select platform",
+            "order": 3
+        },
+        {
+            "filename": "Select Store.png",
+            "alt": "Create Task Group - Select Store",
+            "caption": "Create new task group - select store",
+            "order": 4
+        },
+        {
+            "filename": "Details.png",
+            "alt": "Create Task Group - Enter Details",
+            "caption": "Create new task group - enter details",
+            "order": 5
+        },
+        {
+            "filename": "Profiles.png",
+            "alt": "Profiles view",
+            "caption": "Profiles view",
+            "order": 6
+        },
+        {
+            "filename": "Proxies.png",
+            "alt": "Proxies view",
+            "caption": "Proxies view",
+            "order": 7
+        },
+        {
+            "filename": "Accounts.png",
+            "alt": "Accounts view",
+            "caption": "Accounts view",
+            "order": 8
+        },
+        {
+            "filename": "Settings.png",
+            "alt": "Settings view",
+            "caption": "Settings view",
+            "order": 10
+        }
+    ]
+}

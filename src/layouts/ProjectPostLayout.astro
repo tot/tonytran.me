@@ -5,6 +5,9 @@ import Navbar from "../components/Navbar.astro";
 
 // Date
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
 
 // Icons
 import { CalendarBlank, Tag, CodeSimple, Globe } from "@phosphor-icons/react";
@@ -20,7 +23,7 @@ type Props = CollectionEntry<"projects">["data"];
 
 const { title, description, publishDate, type, link, repo } = Astro.props;
 
-const formattedDate = dayjs(publishDate).format("MMMM, YYYY");
+const formattedDate = dayjs.utc(publishDate).format("MMM YYYY");
 ---
 
 <html lang="en">

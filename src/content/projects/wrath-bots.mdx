@@ -1,0 +1,32 @@
+---
+title: Wrath Bots
+description: Description of the first project
+publishDate: 2018-08-01
+updatedDate: 2024-11-04
+slug: wrath-bots
+type: Frontend
+link: https://x.com/wrathbots
+---
+
+import MdxImage from "../../components/mdx/MdxImage.astro";
+import { IMAGE_SIZES } from "../../constants/image";
+
+# Technologies
+
+-   Next.js
+-   TailwindCSS
+-   React
+
+# Images
+
+{props.images.map((image, index) => (
+
+<MdxImage
+    key={index}
+    size="MDX_MD"
+    src={image}
+    alt={image.alt}
+    caption={image.caption}
+    class="mx-auto"
+/>
+))}

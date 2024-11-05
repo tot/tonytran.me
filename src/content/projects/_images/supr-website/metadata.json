@@ -1,0 +1,28 @@
+{
+    "images": [
+        {
+            "filename": "Home.png",
+            "alt": "Landing Page",
+            "caption": "Landing Page",
+            "order": 1
+        },
+        {
+            "filename": "Dashboard Login.png",
+            "alt": "Dashboard Login",
+            "caption": "Dashboard Login",
+            "order": 2
+        },
+        {
+            "filename": "Dashboard.png",
+            "alt": "Dashboard",
+            "caption": "Dashboard",
+            "order": 3
+        },
+        {
+            "filename": "Dashboard-1.png",
+            "alt": "Dashboard View Subscription",
+            "caption": "Dashboard View Subscription",
+            "order": 4
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "images": [
+        {
+            "filename": "Landing.png",
+            "alt": "Landing Page",
+            "caption": "Landing Page",
+            "order": 1
+        }
+    ]
+}

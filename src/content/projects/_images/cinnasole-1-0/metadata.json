@@ -1,0 +1,28 @@
+{
+    "images": [
+        {
+            "filename": "Tasks.jpg",
+            "alt": "Tasks view",
+            "caption": "Tasks view with active tasks",
+            "order": 1
+        },
+        {
+            "filename": "Proxies.png",
+            "alt": "Proxies view",
+            "caption": "Proxies view with active proxies",
+            "order": 2
+        },
+        {
+            "filename": "Profiles.png",
+            "alt": "Profiles view",
+            "caption": "Profiles view with create new profile form",
+            "order": 3
+        },
+        {
+            "filename": "Settings.png",
+            "alt": "Settings view",
+            "caption": "Settings view",
+            "order": 4
+        }
+    ]
+}
