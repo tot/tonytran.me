@@ -9,4 +9,5 @@ export const projectSchema = z.object({
     type: z.enum(["Frontend", "Backend", "Fullstack", "Design"]),
     link: z.string().url().optional(),
     repo: z.string().url().optional(),
+    slug: z.string(),
 });
