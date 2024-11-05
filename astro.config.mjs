@@ -39,6 +39,7 @@ const createSROnlyLabel = (text) => {
 
 // https://astro.build/config
 export default defineConfig({
+    site: "https://tonytran.me",
     integrations: [react(), tailwind(), mdx(), sitemap(), icon()],
     markdown: {
         rehypePlugins: [
