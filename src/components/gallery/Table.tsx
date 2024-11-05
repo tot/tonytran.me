@@ -228,7 +228,7 @@ const Table = ({ data }: TableProps) => {
                                     )}
                                     style={{ width: cell.column.getSize() }}
                                 >
-                                    <a
+                                    <a /* @ts-expect-error */
                                         href={`/gallery/${cell.row.original.slug}`}
                                         rel="noopener noreferrer"
                                         className="px-2 py-1 block w-full h-full"
