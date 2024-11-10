@@ -8,7 +8,7 @@ const SocialButton = ({ icon, href }: SocialButtonProps) => {
         <a
             href={href}
             target="_blank"
-            className="flex items-center justify-center hover:text-white w-10 h-10 rounded-md hover:bg-white/5 transition-colors duration-100"
+            className="flex items-center justify-center border border-white/10 md:border-transparent hover:text-white w-10 h-10 rounded-md hover:bg-white/5 transition-colors duration-100"
             aria-label={href}
         >
             {icon}

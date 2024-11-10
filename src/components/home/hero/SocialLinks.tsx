@@ -15,7 +15,7 @@ const socialButtons = [
 
 const SocialLinks = () => {
     return (
-        <div className="text-white/70 flex items-center justify-end w-full gap-2 md:w-72 text-xl">
+        <div className="text-white/70 flex items-center justify-normal md:justify-end w-full gap-2 md:w-72 text-xl">
             {socialButtons.map((button) => (
                 <SocialButton key={button.href} {...button} />
             ))}
