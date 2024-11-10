@@ -1,0 +1,148 @@
+{
+    "images": [
+        {
+            "filename": "Tasks - Empty.png",
+            "alt": "Tasks view with no data",
+            "caption": "Tasks view with no data",
+            "order": 1
+        },
+        {
+            "filename": "Tasks.png",
+            "alt": "Tasks view with data",
+            "caption": "Tasks view with data",
+            "order": 2
+        },
+        {
+            "filename": "Tasks - Hover Actions Bar.png",
+            "alt": "Tasks view with hover actions",
+            "caption": "Tasks view with hover actions",
+            "order": 3
+        },
+        {
+            "filename": "Tasks - Create Task.png",
+            "alt": "Tasks view with create task modal",
+            "caption": "Tasks view with create task modal",
+            "order": 4
+        },
+        {
+            "filename": "Tasks - Create Task Settings.png",
+            "alt": "Tasks view with create task modal settings",
+            "caption": "Tasks view with create task modal settings",
+            "order": 5
+        },
+        {
+            "filename": "Tasks - Click Options.png",
+            "alt": "Tasks view with row options",
+            "caption": "Tasks view with row options",
+            "order": 6
+        },
+        {
+            "filename": "Profiles - Empty state groups.png",
+            "alt": "Profiles view with no groups",
+            "caption": "Profiles view with no groups",
+            "order": 7
+        },
+        {
+            "filename": "Profiles.png",
+            "alt": "Profiles view with profile groups",
+            "caption": "Profiles view with profile groups",
+            "order": 8
+        },
+        {
+            "filename": "Profiles - Opened group empty.png",
+            "alt": "Profiles view of opened group with no profiles",
+            "caption": "Profiles view of opened group with no profiles",
+            "order": 9
+        },
+        {
+            "filename": "Profiles - Opened group.png",
+            "alt": "Profiles view of opened group with profiles",
+            "caption": "Profiles view of opened group with profiles",
+            "order": 10
+        },
+        {
+            "filename": "Profiles - Multiple profiles edit.png",
+            "alt": "Profiles view of opened group with multiple profiles selected",
+            "caption": "Profiles view of opened group with multiple profiles selected",
+            "order": 11
+        },
+        {
+            "filename": "Profiles - Create profile shipping.png",
+            "alt": "Profiles view with create profile on shipping step",
+            "caption": "Profiles view with create profile on shipping step",
+            "order": 12
+        },
+        {
+            "filename": "Profiles - Create profile billing.png",
+            "alt": "Profiles view with create profile on billing step",
+            "caption": "Profiles view with create profile on billing step",
+            "order": 13
+        },
+        {
+            "filename": "Profiles - Create profile payment.png",
+            "alt": "Profiles view with create profile on payment step",
+            "caption": "Profiles view with create profile on payment step",
+            "order": 14
+        },
+        {
+            "filename": "Settings.png",
+            "alt": "Settings view",
+            "caption": "Settings view",
+            "order": 15
+        },
+        {
+            "filename": "Settings - Empty proxies.png",
+            "alt": "Settings view with no proxies",
+            "caption": "Settings view with no proxies",
+            "order": 16
+        },
+        {
+            "filename": "Settings - Empty accounts.png",
+            "alt": "Settings view with no accounts",
+            "caption": "Settings view with no accounts",
+            "order": 17
+        },
+        {
+            "filename": "Settings - Add proxies.png",
+            "alt": "Settings view with add proxies modal",
+            "caption": "Settings view with add proxies modal",
+            "order": 18
+        },
+        {
+            "filename": "Settings - Individual Edit.png",
+            "alt": "Settings view with individual proxy edit modal",
+            "caption": "Settings view with individual proxy edit modal",
+            "order": 19
+        },
+        {
+            "filename": "Settings - Multiple Edit.png",
+            "alt": "Settings view with multiple proxies edit modal",
+            "caption": "Settings view with multiple proxies edit modal",
+            "order": 20
+        },
+        {
+            "filename": "Captcha.png",
+            "alt": "Captcha view with harvesters",
+            "caption": "Captcha view with harvesters",
+            "order": 21
+        },
+        {
+            "filename": "Captcha - No captcha harvesters.png",
+            "alt": "Captcha view with no captcha harvesters",
+            "caption": "Captcha view with no captcha harvesters",
+            "order": 22
+        },
+        {
+            "filename": "Captcha window.png",
+            "alt": "Captcha harvester window",
+            "caption": "Captcha harvester window",
+            "order": 23
+        },
+        {
+            "filename": "Activation.png",
+            "alt": "Activation window",
+            "caption": "Activation window",
+            "order": 24
+        }
+    ]
+}

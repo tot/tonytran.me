@@ -1,0 +1,149 @@
+{
+    "images": [
+        {
+            "filename": "Login.png",
+            "alt": "Login Screen",
+            "caption": "Login interface for Sole AIO",
+            "order": 1
+        },
+        {
+            "filename": "No Tasks.png",
+            "alt": "Empty Tasks Dashboard",
+            "caption": "Initial dashboard view with no tasks",
+            "order": 2
+        },
+        {
+            "filename": "Creation Modal - Selected Store.png",
+            "alt": "Store Selection",
+            "caption": "Store selection interface for creating new tasks",
+            "order": 3
+        },
+        {
+            "filename": "Creation Modal - Supreme.png",
+            "alt": "Supreme Creation",
+            "caption": "Create new botting tasks for Supreme e-shop",
+            "order": 4
+        },
+        {
+            "filename": "Filled Table w Selection.png",
+            "alt": "Tasks Overview",
+            "caption": "Dashboard with active tasks",
+            "order": 5
+        },
+        {
+            "filename": "Profiles Window - Empty.png",
+            "alt": "Empty Profiles",
+            "caption": "Profiles section with no entries",
+            "order": 6
+        },
+        {
+            "filename": "Profiles Window - Create Profile.png",
+            "alt": "Create Profile",
+            "caption": "Profile creation interface",
+            "order": 7
+        },
+        {
+            "filename": "Profiles Window - Populated.png",
+            "alt": "Populated Profiles",
+            "caption": "Profiles section with saved entries",
+            "order": 8
+        },
+        {
+            "filename": "Profiles Window - Import Modal.png",
+            "alt": "Import Profiles",
+            "caption": "Import profiles from file",
+            "order": 9
+        },
+        {
+            "filename": "Profiles Window - Import Modal Imported.png",
+            "alt": "Import Profiles - View Imported File",
+            "caption": "View imported files",
+            "order": 10
+        },
+        {
+            "filename": "Proxies Window - Empty.png",
+            "alt": "Empty Proxies",
+            "caption": "Proxy management interface - initial view",
+            "order": 11
+        },
+        {
+            "filename": "Proxies Window - Import Dialog.png",
+            "alt": "Import Proxies",
+            "caption": "Proxy import interface",
+            "order": 12
+        },
+        {
+            "filename": "Proxies Window - Loaded Proxies.png",
+            "alt": "Loaded Proxies",
+            "caption": "Proxy list with loaded entries",
+            "order": 13
+        },
+        {
+            "filename": "Proxies Window - Paste Proxies.png",
+            "alt": "Paste Proxies",
+            "caption": "Paste proxies from clipboard",
+            "order": 14
+        },
+        {
+            "filename": "Accounts Window - Accounts Empty.png",
+            "alt": "Empty Accounts",
+            "caption": "Accounts section with no entries",
+            "order": 15
+        },
+        {
+            "filename": "Accounts Window - Accounts Populated.png",
+            "alt": "Populated Accounts",
+            "caption": "Accounts section with populated entries",
+            "order": 16
+        },
+        {
+            "filename": "Accounts Window - Create Account Modal.png",
+            "alt": "Create Account Modal",
+            "caption": "Create new account",
+            "order": 17
+        },
+        {
+            "filename": "Accounts Window - Shipping Rates Empty.png",
+            "alt": "Empty Shipping Rates",
+            "caption": "Shipping rates section with no entries",
+            "order": 18
+        },
+        {
+            "filename": "Accounts Window - Shipping Rates Populated.png",
+            "alt": "Populated Shipping Rates",
+            "caption": "Shipping rates section with populated entries",
+            "order": 19
+        },
+        {
+            "filename": "Captcha Window.png",
+            "alt": "Captcha Manager",
+            "caption": "Captcha management interface",
+            "order": 20
+        },
+        {
+            "filename": "Captcha Window Create Account.png",
+            "alt": "Create Captcha Account",
+            "caption": "Create new captcha account",
+            "order": 21
+        },
+        {
+            "filename": "Captcha Window Create Harvester.png",
+            "alt": "Create Captcha Harvester",
+            "caption": "Create new captcha harvester",
+            "order": 22
+        },
+        {
+            "filename": "Harvester.png",
+            "alt": "Captcha Harvester",
+            "caption": "Captcha harvester",
+            "order": 23,
+            "size": "MDX_XS"
+        },
+        {
+            "filename": "Settings Window.png",
+            "alt": "Settings",
+            "caption": "Application settings interface",
+            "order": 24
+        }
+    ]
+}
