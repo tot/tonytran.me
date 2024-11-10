@@ -3,7 +3,7 @@ import type { ImageInfo } from "../types/project";
 export const getProjectImages = async (projectId: string) => {
     // 1. List all album files from collections path
     let images = import.meta.glob<{ default: ImageMetadata }>(
-        "../content/projects/**/*.{jpeg,jpg,png,webp}",
+        "/src/content/projects/**/*.{jpeg,jpg,png,webp}",
     );
 
     // 2. Filter images by exact projectId match
@@ -19,7 +19,7 @@ export const getProjectImages = async (projectId: string) => {
     try {
         // Import all metadata files at build time
         const metadataFiles = import.meta.glob<{ images: ImageInfo[] }>(
-            "../content/projects/_images/*/metadata.json",
+            "/src/content/projects/_images/*/metadata.json",
             { eager: true },
         );
 
