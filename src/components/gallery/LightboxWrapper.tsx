@@ -29,7 +29,7 @@ export default function LightboxWrapper({
 
     return (
         <>
-            <div className="relative border border-stone-700/30 rounded overflow-hidden shadow bg-stone-700/5">
+            <div className="relative rounded overflow-hidden shadow">
                 {children}
             </div>
             <Lightbox

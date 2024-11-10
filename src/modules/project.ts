@@ -3,7 +3,7 @@ import type { ImageInfo } from "../types/project";
 export const getProjectImages = async (projectId: string) => {
     // 1. List all album files from collections path
     let images = import.meta.glob<{ default: ImageMetadata }>(
-        "/src/content/projects/**/*.{jpeg,jpg,png,webp}",
+        "../content/projects/**/*.{jpeg,jpg,png,webp}",
     );
 
     // 2. Filter images by exact projectId match
@@ -16,10 +16,8 @@ export const getProjectImages = async (projectId: string) => {
         }),
     );
 
-    console.log("Found images:", Object.keys(images));
-
     try {
-        const metadataPath = `/src/content/projects/_images/${projectId}/metadata.json`;
+        const metadataPath = `../content/projects/_images/${projectId}/metadata.json`;
         const metadata = await import(/* @vite-ignore */ metadataPath);
 
         // 3. Images are promises, so we need to resolve the glob promises
