@@ -1,6 +1,13 @@
 import type { ImageInfo } from "../types/project";
-import type { ImageMetadataSchemaType } from "../schemas/imageMetadata";
 import { getCollection } from "astro:content";
+
+// Helper function to clean filenames - strip query params and get base name
+const cleanImageFilename = (filename: string): string => {
+    // Remove query parameters and get base filename
+    const baseFilename = filename.split("?")[0].split("/").pop() ?? "";
+    // Remove any Astro-generated hash (format: name-[hash].ext)
+    return baseFilename.replace(/-[A-Za-z0-9]{8,}\./g, ".");
+};
 
 export const getProjectImages = async (projectId: string) => {
     // 1. List all album files from collections path
@@ -28,16 +35,30 @@ export const getProjectImages = async (projectId: string) => {
             throw new Error(`No metadata found for ${projectId}`);
         }
 
+        // Create a Map to store unique images by their base filename
+        const uniqueImages = new Map<
+            string,
+            { path: string; module: (typeof images)[string] }
+        >();
+
+        // Group images by their base filename, keeping only the first occurrence
+        Object.entries(images).forEach(([path, module]) => {
+            const baseFilename = cleanImageFilename(path);
+            if (!uniqueImages.has(baseFilename)) {
+                uniqueImages.set(baseFilename, { path, module });
+            }
+        });
+
         // 3. Resolve image promises and combine with metadata
         const resolvedImages = await Promise.all(
-            Object.values(images).map(async (image) => {
-                const mod = await image();
-                const filename = mod.default.src.split("/").pop() as string;
+            Array.from(uniqueImages.values()).map(async ({ path, module }) => {
+                const mod = await module();
+                const filename = cleanImageFilename(mod.default.src);
 
-                // Use type assertion to ensure compatibility
+                // Find matching metadata
                 const imageMetadata = metadata.data.images.find(
-                    (img: ImageInfo) => filename.includes(img.filename),
-                ) as unknown as ImageInfo | undefined;
+                    (img) => cleanImageFilename(img.filename) === filename,
+                );
 
                 if (!imageMetadata) {
                     console.warn(`⚠️ No metadata found for image: ${filename}`);
@@ -75,7 +96,7 @@ export const getProjectImages = async (projectId: string) => {
                 const dupeImages = resolvedImages
                     .filter((img) => img.order === order)
                     .map((img) => ({
-                        filename: img.src.split("/").pop(),
+                        filename: cleanImageFilename(img.src),
                         order: img.order,
                     }));
                 return { order, images: dupeImages };

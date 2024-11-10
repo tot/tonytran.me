@@ -1,5 +1,5 @@
 // 1. Import utilities from `astro:content`
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { projectSchema } from "../schemas/project";
 import { imageMetadataSchema } from "../schemas/imageMetadata";
 

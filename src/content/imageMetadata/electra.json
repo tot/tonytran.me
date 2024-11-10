@@ -136,7 +136,8 @@
             "filename": "Captcha window.png",
             "alt": "Captcha harvester window",
             "caption": "Captcha harvester window",
-            "order": 23
+            "order": 23,
+            "size": "MDX_XS"
         },
         {
             "filename": "Activation.png",
