@@ -5,8 +5,16 @@ import { getCollection } from "astro:content";
 const cleanImageFilename = (filename: string): string => {
     // Remove query parameters and get base filename
     const baseFilename = filename.split("?")[0].split("/").pop() ?? "";
-    // Remove any Astro-generated hash (format: name-[hash].ext)
-    return baseFilename.replace(/-[A-Za-z0-9]{8,}\./g, ".");
+
+    // Handle Astro's production build hashes (e.g., "Tasks.BTXmyfLl.jpg" -> "Tasks.jpg")
+    const parts = baseFilename.split(".");
+    if (parts.length === 3) {
+        // If we have 3 parts (name.hash.ext), remove the hash
+        return `${parts[0]}.${parts[2]}`;
+    }
+
+    // Handle development case or already clean filename
+    return baseFilename;
 };
 
 export const getProjectImages = async (projectId: string) => {
