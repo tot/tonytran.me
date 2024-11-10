@@ -2,6 +2,12 @@ import { getCollection } from "astro:content";
 
 import type { CollectionEntry, CollectionKey } from "astro:content";
 
+interface BaseEntryData {
+    publishDate: Date;
+    updatedDate?: Date;
+    draft: boolean;
+}
+
 /*-------------------------------- all entries ------------------------------*/
 
 export interface GetAllEntriesOptions {
@@ -19,10 +25,15 @@ export const getAllEntries = async <T extends CollectionKey>(
     collectionName: T,
     options?: GetAllEntriesOptions,
 ): Promise<CollectionEntry<T>[]> => {
+    if (collectionName === "imageMetadata") {
+        throw new Error("imageMetadata collection cannot be sorted by date");
+    }
+
     const { skipSort = false, includeDrafts = false } = options ?? {};
 
     const entries = await getCollection<T>(collectionName, ({ data }) => {
-        const isProdAndDraft = import.meta.env.PROD && data.draft;
+        const isProdAndDraft =
+            import.meta.env.PROD && (data as BaseEntryData).draft;
         return !isProdAndDraft || includeDrafts;
     });
 
@@ -37,17 +48,27 @@ export const getAllEntries = async <T extends CollectionKey>(
 // just for sorting
 export const getEntryLastDate = <T extends CollectionKey>(
     entry: CollectionEntry<T>,
-): Date => entry.data.updatedDate ?? entry.data.publishDate;
+): Date => {
+    if (entry.collection === "imageMetadata") {
+        throw new Error("imageMetadata entries do not have dates");
+    }
+    const data = entry.data as BaseEntryData;
+    return data.updatedDate ?? data.publishDate;
+};
 
 export const sortEntriesByDateDesc = <T extends CollectionKey>(
     entries: CollectionEntry<T>[],
-) =>
-    entries
+) => {
+    if (entries[0]?.collection === "imageMetadata") {
+        throw new Error("imageMetadata entries cannot be sorted by date");
+    }
+    return entries
         .slice()
         .sort(
             (a, b) =>
                 getEntryLastDate(b).valueOf() - getEntryLastDate(a).valueOf(),
         );
+};
 
 /*------------------------- lastAccessDate for components -----------------------*/
 
